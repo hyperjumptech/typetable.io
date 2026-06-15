@@ -393,20 +393,6 @@
         color: var(--matcha-800);
       }
 
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin: 1.75rem 0 1rem;
-      }
-
-      .hero-note {
-        margin: 0;
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        color: var(--silver);
-      }
-
       /* Product demo */
       .product-demo {
         position: relative;
@@ -1246,43 +1232,49 @@
         box-shadow: var(--shadow-hard);
       }
 
+      .cta-inner .coming-soon-label {
+        margin-bottom: 0.5rem;
+      }
+
       .cta-inner .lead {
         margin: 0.75rem 0 1.75rem;
         color: var(--black);
       }
 
-      .cta-form {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        max-width: 26rem;
-        margin: 0 auto;
+      .cta-inner .btn {
+        margin-top: 0.25rem;
       }
 
-      @media (min-width: 480px) {
-        .cta-form {
-          flex-direction: row;
-        }
-      }
-
-      .cta-form input {
-        flex: 1;
-        min-width: 0;
-        padding: 0.875rem 1rem;
-        font-family: var(--font-display);
-        font-size: 1rem;
-        border: 2px solid var(--black);
-        border-radius: var(--radius-pill);
-        background: var(--white);
-      }
-
-      .cta-form input:focus {
-        outline: 2px solid var(--ube-800);
-        outline-offset: 2px;
+      .coming-soon-label {
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--charcoal);
       }
 
       .cta-note {
         margin: 1rem 0 0;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--charcoal);
+      }
+
+      .cta-note a {
+        color: var(--black);
+        font-weight: 500;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .cta-note a:hover {
+        color: var(--ube-800);
+      }
+
+      .price-coming-soon {
+        margin: 1.25rem 0 0;
         font-family: var(--font-mono);
         font-size: 0.75rem;
         color: var(--charcoal);
@@ -1296,34 +1288,140 @@
       .footer-shell {
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 2rem;
         max-width: var(--max);
         margin: 0 auto;
-        padding: 1.5rem 1.75rem;
+        padding: 2rem 1.75rem;
         background: var(--white);
         border: 1px solid var(--oat);
         border-radius: var(--radius-section);
         font-size: 0.9375rem;
-        color: var(--silver);
+        color: var(--charcoal);
         box-shadow: var(--shadow-clay);
       }
 
+      .footer-grid {
+        display: grid;
+        gap: 2rem;
+      }
+
       @media (min-width: 768px) {
-        .footer-shell {
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
+        .footer-grid {
+          grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(
+              0,
+              1.2fr
+            );
+          gap: 2.5rem;
         }
+      }
+
+      .footer-brand .label {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-logo {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 0.875rem;
+      }
+
+      .footer-logo img {
+        display: block;
+        width: auto;
+        height: 1.75rem;
+      }
+
+      .footer-logo:hover img {
+        opacity: 0.82;
+      }
+
+      .footer-tagline {
+        margin: 0;
+        max-width: 22rem;
+        font-size: 0.9375rem;
+        line-height: 1.55;
+        color: var(--charcoal);
       }
 
       .footer-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 1.25rem;
+        gap: 0.75rem;
+      }
+
+      .footer-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid var(--oat);
+        border-radius: 50%;
+        color: var(--charcoal);
+        background: var(--cream);
+        transition:
+          color 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease,
+          transform 0.2s ease;
       }
 
       .footer-links a:hover {
         color: var(--black);
+        border-color: var(--ube-300);
+        background: color-mix(in srgb, var(--ube-300) 18%, var(--white));
+        transform: scale(1.05);
+      }
+
+      .footer-links svg {
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+
+      .footer-address {
+        margin: 0 0 1rem;
+        font-style: normal;
+        line-height: 1.55;
+      }
+
+      .footer-address strong {
+        display: block;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+        color: var(--black);
+      }
+
+      .footer-meta {
+        margin: 0;
+        font-size: 0.875rem;
+        color: var(--silver);
+      }
+
+      .footer-meta a {
+        font-weight: 500;
+        color: var(--black);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .footer-meta a:hover {
+        color: var(--ube-800);
+      }
+
+      .footer-meta + .footer-meta {
+        margin-top: 0.5rem;
+      }
+
+      .footer-bottom {
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--oat-light);
+        text-align: center;
+        font-size: 0.875rem;
+        color: var(--silver);
+      }
+
+      .footer-bottom p {
+        margin: 0;
       }
     </style>
   </head>
@@ -1347,8 +1445,13 @@
           <a href="#faq">FAQ</a>
         </nav>
         <div class="header-cta">
-          <a href="#pricing" class="btn btn-ghost">Sign in</a>
-          <a href="#cta" class="btn btn-primary">Start free</a>
+          <a
+            href="https://www.linkedin.com/company/hyperjump/"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Follow on LinkedIn</a
+          >
         </div>
         <button
           type="button"
@@ -1369,7 +1472,13 @@
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
-        <a href="#cta" class="btn btn-primary">Start free</a>
+        <a
+          href="https://www.linkedin.com/company/hyperjump/"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Follow on LinkedIn</a
+        >
       </nav>
     </header>
 
@@ -1388,14 +1497,6 @@
                 incidents, site visits, certifications, deliverables. TypeTable
                 proposes the table, enforces the rules, and lets everyone add
                 records in plain language. No spreadsheet design. No dev ticket.
-              </p>
-              <div class="hero-actions">
-                <a href="#cta" class="btn btn-primary btn-lg">Start free</a>
-                <a href="#cta" class="btn btn-secondary btn-lg">Book a demo</a>
-              </div>
-              <p class="hero-note">
-                For 5-person teams and 500-person departments · set up in
-                minutes
               </p>
             </div>
 
@@ -2008,9 +2109,16 @@
       <section id="pricing" class="section">
         <div class="section-head wrap">
           <p class="label">Pricing</p>
-          <h2>Start free. Scale when your team grows.</h2>
+          <h2>Plans for every team size.</h2>
           <p class="lead">
-            Talk to us when IT needs SSO, audit trails, and an annual contract.
+            Pricing is coming soon. Follow us on
+            <a
+              href="https://www.linkedin.com/company/hyperjump/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+            to get notified at launch.
           </p>
         </div>
         <div class="pricing-grid wrap">
@@ -2024,9 +2132,9 @@
               <li>2 collaborators</li>
               <li>Basic validation</li>
             </ul>
-            <a href="#cta" class="btn btn-secondary">Start free</a>
+            <p class="price-coming-soon">Coming soon</p>
           </article>
-          <article class="price-card price-card--featured">
+          <!-- <article class="price-card price-card--featured">
             <span class="price-badge">Most popular</span>
             <h3>Team</h3>
             <p class="price">
@@ -2041,7 +2149,7 @@
               <li>Email support</li>
             </ul>
             <a href="#cta" class="btn btn-primary">Start free trial</a>
-          </article>
+          </article> -->
           <article class="price-card">
             <h3>Enterprise</h3>
             <p class="price"><span>Custom</span></p>
@@ -2055,7 +2163,7 @@
               <li>Custom retention & DPA</li>
               <li>On-prem or cloud deployment</li>
             </ul>
-            <a href="#cta" class="btn btn-secondary">Contact sales</a>
+            <p class="price-coming-soon">Coming soon</p>
           </article>
         </div>
       </section>
@@ -2129,38 +2237,141 @@
 
       <section id="cta" class="cta-band">
         <div class="cta-inner wrap">
-          <h2>Describe your first log today</h2>
+          <p class="coming-soon-label">Coming soon</p>
+          <h2>TypeTable is on the way</h2>
           <p class="lead">
-            Start with incidents, site visits, certifications — or whatever your
-            team keeps re-typing into a sheet.
+            We're putting the finishing touches on TypeTable. Follow Hyperjump
+            on LinkedIn and we'll let you know the moment it's ready.
           </p>
-          <form class="cta-form" data-cta-form novalidate>
-            <label class="sr-only" for="cta-email">Work email</label>
-            <input
-              id="cta-email"
-              type="email"
-              name="email"
-              placeholder="you@company.com"
-              autocomplete="email"
-              required
-            />
-            <button type="submit" class="btn btn-primary btn-lg">
-              Start free
-            </button>
-          </form>
-          <p class="cta-note">No credit card · Full loop on the free plan</p>
+          <a
+            href="https://www.linkedin.com/company/hyperjump/"
+            class="btn btn-primary btn-lg"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Follow us on LinkedIn</a
+          >
+          <p class="cta-note">
+            <a
+              href="https://www.linkedin.com/company/hyperjump/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Hyperjump Technology on LinkedIn</a
+            >
+          </p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-shell wrap">
-        <p>© 2026 TypeTable</p>
-        <nav class="footer-links" aria-label="Footer">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="mailto:hello@typetable.app">Contact</a>
-        </nav>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a
+              href="https://hyperjump.tech/en"
+              class="footer-logo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/hyperjump-logo.png"
+                alt="Hyperjump"
+                width="187"
+                height="32"
+              />
+            </a>
+            <p class="footer-tagline">
+              Engineering excellence, open-source first. We build and
+              commercialize tools that help companies streamline, simplify, and
+              secure modern DevOps.
+            </p>
+          </div>
+
+          <div class="footer-social">
+            <p class="label">Connect</p>
+            <nav class="footer-links" aria-label="Social media">
+              <a
+                href="https://www.linkedin.com/company/hyperjump"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path
+                    d="M16 16V10.14C16 7.26 15.38 5.06 12.02 5.06C10.4 5.06 9.32 5.94 8.88 6.78H8.84V5.32H5.66V16H8.98V10.7C8.98 9.3 9.24 7.96 10.96 7.96C12.66 7.96 12.68 9.54 12.68 10.78V15.98H16V16ZM0.26 5.32H3.58V16H0.26V5.32ZM1.92 0C0.86 0 0 0.86 0 1.92C0 2.98 0.86 3.86 1.92 3.86C2.98 3.86 3.84 2.98 3.84 1.92C3.84 0.86 2.98 0 1.92 0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/hyperjumptech"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path
+                    d="M10 0.416504C4.475 0.416504 0 4.8165 0 10.2432C0 14.5857 2.865 18.2682 6.8375 19.5665C7.3375 19.659 7.52083 19.3548 7.52083 19.094C7.52083 18.8607 7.5125 18.2423 7.50833 17.4232C4.72667 18.0157 4.14 16.1048 4.14 16.1048C3.685 14.9707 3.0275 14.6673 3.0275 14.6673C2.12167 14.0582 3.0975 14.0707 3.0975 14.0707C4.10167 14.139 4.62917 15.0832 4.62917 15.0832C5.52083 16.5857 6.97 16.1515 7.54167 15.9007C7.63167 15.2648 7.88917 14.8323 8.175 14.5865C5.95417 14.3407 3.62 13.4957 3.62 9.73067C3.62 8.65817 4.0075 7.7815 4.64917 7.094C4.53667 6.84567 4.19917 5.8465 4.73667 4.49317C4.73667 4.49317 5.57417 4.22984 7.48667 5.50067C8.28667 5.28234 9.13667 5.174 9.98667 5.169C10.8367 5.174 11.6867 5.28234 12.4867 5.50067C14.3867 4.22984 15.2242 4.49317 15.2242 4.49317C15.7617 5.8465 15.4242 6.84567 15.3242 7.094C15.9617 7.7815 16.3492 8.65817 16.3492 9.73067C16.3492 13.5057 14.0117 14.3365 11.7867 14.5782C12.1367 14.8732 12.4617 15.4757 12.4617 16.3965C12.4617 17.7115 12.4492 18.7682 12.4492 19.0873C12.4492 19.3448 12.6242 19.6523 13.1367 19.554C17.1375 18.264 20 14.579 20 10.2432C20 4.8165 15.5225 0.416504 10 0.416504Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://medium.com/hyperjump-tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Medium"
+              >
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path
+                    d="M14.7233 3.15517L16 1.93384V1.6665H11.5773L8.42533 9.51184L4.83933 1.6665H0.202V1.93384L1.69333 3.72917C1.83867 3.86184 1.91467 4.05584 1.89533 4.25117V11.3065C1.94133 11.5605 1.85867 11.8218 1.68 12.0065L0 14.0425V14.3065H4.76333V14.0392L3.08333 12.0065C2.99341 11.9156 2.92574 11.8051 2.88561 11.6836C2.84548 11.5622 2.83397 11.4331 2.852 11.3065V5.20384L7.03333 14.3098H7.51933L11.1147 5.20384V12.4578C11.1147 12.6492 11.1147 12.6885 10.9893 12.8138L9.696 14.0652V14.3332H15.9707V14.0658L14.724 12.8452C14.67 12.8045 14.6282 12.7498 14.603 12.6871C14.5779 12.6243 14.5704 12.5559 14.5813 12.4892V3.51117C14.5702 3.44452 14.5775 3.37608 14.6025 3.31331C14.6276 3.25054 14.6694 3.19584 14.7233 3.15517Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://hyperjump.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Substack"
+              >
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M3 3h18v3H3V3zm0 5h18v3H3V8zm0 5h18v8l-9-4-9 4v-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </nav>
+          </div>
+
+          <div class="footer-contact">
+            <p class="label">Headquarters</p>
+            <address class="footer-address">
+              <strong>Sinar Mas MSIG Tower (34th floor)</strong>
+              Jl. Jenderal Sudirman Kav. 21<br />
+              Jakarta Selatan 12920<br />
+              Indonesia
+            </address>
+            <p class="footer-meta">
+              <a href="mailto:solution@hyperjump.tech"
+                >solution@hyperjump.tech</a
+              >
+            </p>
+            <p class="footer-meta">D&amp;B D-U-N-S: 65-975-4901</p>
+            <p class="footer-meta">
+              <a
+                href="https://maps.app.goo.gl/Dew762WwKLruRYGC9"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open in Google Maps</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>Copyright © 2026 PT Artha Rajamas Mandiri. All rights reserved.</p>
+        </div>
       </div>
     </footer>
 
@@ -2204,27 +2415,6 @@
             panel.hidden = open;
           });
         });
-
-        const ctaForm = document.querySelector("[data-cta-form]");
-        if (ctaForm) {
-          ctaForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const input = ctaForm.querySelector('input[type="email"]');
-            if (input && input.reportValidity()) {
-              ctaForm.reset();
-              const btn = ctaForm.querySelector('button[type="submit"]');
-              if (btn) {
-                const label = btn.textContent;
-                btn.textContent = "You're on the list";
-                btn.disabled = true;
-                setTimeout(function () {
-                  btn.textContent = label;
-                  btn.disabled = false;
-                }, 3000);
-              }
-            }
-          });
-        }
       })();
     </script>
   </body>
