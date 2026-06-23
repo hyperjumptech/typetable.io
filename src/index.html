@@ -30,7 +30,47 @@
         <nav class="nav" aria-label="Primary">
           <a href="#how">How it works</a>
           <a href="#examples">Examples</a>
-          <a href="use-cases.html">Use cases</a>
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              type="button"
+              class="nav-dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              data-dropdown-toggle
+            >
+              Use cases
+              <svg class="nav-caret" viewBox="0 0 10 6" aria-hidden="true">
+                <path
+                  d="M1 1l4 4 4-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" data-dropdown-menu>
+              <a href="use-cases/deal-pipeline.html"
+                >Deal pipeline<span>Sales &amp; CRM</span></a
+              >
+              <a href="use-cases/bug-triage.html"
+                >Bug &amp; issue triage<span>Customer support</span></a
+              >
+              <a href="use-cases/expense-log.html"
+                >Expense &amp; reimbursement log<span>Finance</span></a
+              >
+              <a href="use-cases/interview-scorecards.html"
+                >Interview scorecards<span>People &amp; HR</span></a
+              >
+              <a href="use-cases/maintenance-log.html"
+                >Equipment maintenance log<span>Field operations</span></a
+              >
+              <a href="use-cases/campaign-tracker.html"
+                >Campaign tracker<span>Marketing</span></a
+              >
+            </div>
+          </div>
           <a href="#teams">Teams</a>
           <a href="#features">Features</a>
           <a href="#pricing">Pricing</a>
@@ -60,7 +100,25 @@
       <nav id="mobile-nav" class="mobile-nav" hidden data-mobile-nav>
         <a href="#how">How it works</a>
         <a href="#examples">Examples</a>
-        <a href="use-cases.html">Use cases</a>
+        <span class="mobile-nav-label">Use cases</span>
+        <a class="mobile-nav-sub" href="use-cases/deal-pipeline.html"
+          >Deal pipeline</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/bug-triage.html"
+          >Bug &amp; issue triage</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/expense-log.html"
+          >Expense &amp; reimbursement log</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/interview-scorecards.html"
+          >Interview scorecards</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/maintenance-log.html"
+          >Equipment maintenance log</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/campaign-tracker.html"
+          >Campaign tracker</a
+        >
         <a href="#teams">Teams</a>
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>

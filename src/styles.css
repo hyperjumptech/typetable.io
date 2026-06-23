@@ -1746,3 +1746,163 @@
       .uc-cta .btn {
         margin: 0 0.35rem 0.5rem;
       }
+
+      /* ============================================================
+         Header "Use cases" dropdown
+         ============================================================ */
+
+      .nav {
+        align-items: center;
+      }
+
+      .nav-dropdown {
+        position: relative;
+        display: inline-flex;
+      }
+
+      .nav-dropdown-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0;
+        font-family: inherit;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        line-height: inherit;
+        color: var(--charcoal);
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+
+      .nav-dropdown-toggle:hover {
+        color: var(--black);
+      }
+
+      .nav-caret {
+        width: 0.6rem;
+        height: 0.6rem;
+        transition: transform 0.15s ease;
+      }
+
+      .nav-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 17rem;
+        margin-top: 0.75rem;
+        padding: 0.4rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.1rem;
+        background: var(--white);
+        border: 2px solid var(--black);
+        border-radius: 16px;
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+        z-index: 60;
+      }
+
+      /* invisible bridge so the menu stays open while moving the cursor onto it */
+      .nav-dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -0.75rem;
+        left: 0;
+        right: 0;
+        height: 0.75rem;
+      }
+
+      .nav-dropdown:hover .nav-dropdown-menu,
+      .nav-dropdown:focus-within .nav-dropdown-menu,
+      .nav-dropdown-menu.is-open {
+        display: flex;
+      }
+
+      .nav-dropdown:hover .nav-caret,
+      .nav-dropdown:focus-within .nav-caret,
+      .nav-dropdown-toggle[aria-expanded="true"] .nav-caret {
+        transform: rotate(180deg);
+      }
+
+      .nav-dropdown-menu a {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+        padding: 0.5rem 0.65rem;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--black);
+        text-decoration: none;
+        border-radius: 10px;
+      }
+
+      .nav-dropdown-menu a span {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--charcoal);
+      }
+
+      .nav-dropdown-menu a:hover,
+      .nav-dropdown-menu a:focus-visible {
+        background: var(--cream);
+      }
+
+      .nav-dropdown-menu a[aria-current="page"] {
+        background: var(--ube-300);
+      }
+
+      /* Mobile nav: use-cases sub-group */
+      .mobile-nav-label {
+        padding: 0.85rem 0 0.1rem;
+        font-family: var(--font-mono);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--silver);
+      }
+
+      .mobile-nav a.mobile-nav-sub {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+      }
+
+      /* ============================================================
+         Use case detail pages
+         ============================================================ */
+
+      .uc-outcome--center {
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .uc-detail-body {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.5rem, 4vw, 2.5rem);
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+
+      .uc-more {
+        max-width: var(--max);
+        margin: clamp(2.5rem, 6vw, 3.5rem) auto 0;
+        text-align: center;
+      }
+
+      .uc-more .label {
+        margin-bottom: 0;
+      }
+
+      .uc-more .uc-nav {
+        margin-top: 0.9rem;
+      }
+
+      .uc-detail .uc-cta {
+        margin-top: clamp(2.5rem, 6vw, 3.5rem);
+      }
