@@ -735,37 +735,8 @@
         white-space: nowrap;
       }
 
-      .use-case-flow-badge::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -9px;
-        transform: translateX(-50%);
-        border: 9px solid transparent;
-        border-top-color: var(--black);
-      }
-
-      .use-case-flow-badge::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -6px;
-        transform: translateX(-50%);
-        border: 7px solid transparent;
-        border-top-color: var(--lemon-400);
-        z-index: 1;
-      }
-
       .use-case-flow-badge--record {
         background: color-mix(in srgb, var(--slushie-500) 50%, var(--white));
-      }
-
-      .use-case-flow-badge--record::before {
-        border-top-color: color-mix(
-          in srgb,
-          var(--slushie-500) 50%,
-          var(--white)
-        );
       }
 
       .chat {
