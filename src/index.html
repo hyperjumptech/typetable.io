@@ -73,6 +73,7 @@
           </div>
           <a href="#teams">Teams</a>
           <a href="#features">Features</a>
+          <a href="mcp.html">MCP</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
         </nav>
@@ -121,6 +122,7 @@
         >
         <a href="#teams">Teams</a>
         <a href="#features">Features</a>
+        <a href="mcp.html">MCP</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a
@@ -758,6 +760,71 @@
               rebuilding.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section id="mcp" class="section">
+        <div class="section-head wrap">
+          <p class="label">Model Context Protocol</p>
+          <h2>Bring your tables into the AI tools you already use</h2>
+          <p class="lead">
+            TypeTable speaks MCP. Connect Claude Desktop, Cursor, or any
+            MCP&#8209;compatible client and let your agents read and update your
+            tables — your data becomes structured memory any AI can use.
+          </p>
+        </div>
+        <div class="mcp-split wrap">
+          <div class="mcp-copy">
+            <ul class="mcp-points">
+              <li>
+                <strong>Real records, not notes.</strong> Agents list tables,
+                query rows, and add or edit records — against the same validated
+                data you use in chat.
+              </li>
+              <li>
+                <strong>Your rules still apply.</strong> Types, required fields,
+                and permissions hold whether a person or an agent writes.
+              </li>
+              <li>
+                <strong>One secure token.</strong> Create an API token in
+                Settings and connect over Streamable HTTP. Revoke it any time.
+              </li>
+            </ul>
+            <div class="mcp-actions">
+              <a href="mcp.html" class="btn btn-primary">Read the MCP guide</a>
+              <a
+                href="https://app.typetable.io"
+                class="btn btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Create a token</a
+              >
+            </div>
+          </div>
+          <div class="mcp-code">
+            <div class="code-block">
+              <div class="code-head">
+                <span class="code-file">.cursor/mcp.json</span>
+                <button
+                  type="button"
+                  class="code-copy"
+                  data-copy="#mcp-config-home"
+                >
+                  <span data-copy-label>Copy</span>
+                </button>
+              </div>
+              <pre><code id="mcp-config-home">{
+  "mcpServers": {
+    "typetable": {
+      "url": "https://app.typetable.io/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ath_YOUR_TOKEN_HERE"
+      }
+    }
+  }
+}</code></pre>
+            </div>
+          </div>
         </div>
       </section>
 

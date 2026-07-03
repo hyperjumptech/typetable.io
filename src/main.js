@@ -37,6 +37,28 @@
           });
         });
 
+        document.querySelectorAll("[data-copy]").forEach(function (button) {
+          button.addEventListener("click", function () {
+            const target = document.querySelector(
+              button.getAttribute("data-copy")
+            );
+            if (!target || !navigator.clipboard) return;
+            navigator.clipboard
+              .writeText(target.innerText)
+              .then(function () {
+                const label = button.querySelector("[data-copy-label]");
+                const previous = label ? label.textContent : null;
+                button.classList.add("is-copied");
+                if (label) label.textContent = "Copied";
+                setTimeout(function () {
+                  button.classList.remove("is-copied");
+                  if (label && previous !== null) label.textContent = previous;
+                }, 1600);
+              })
+              .catch(function () {});
+          });
+        });
+
         document.querySelectorAll(".faq-item").forEach(function (item) {
           const trigger = item.querySelector(".faq-trigger");
           const panel = item.querySelector(".faq-panel");
