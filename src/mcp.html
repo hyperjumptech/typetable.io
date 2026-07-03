@@ -234,8 +234,8 @@
             <span class="step-num" aria-hidden="true">2</span>
             <h3>Add TypeTable to your client</h3>
             <p>
-              Paste the config for Claude Desktop or Cursor below, and drop your
-              token into the <code>Authorization</code> header.
+              Pick your client below, paste the config, and drop your token into
+              the <code>Authorization</code> header.
             </p>
           </li>
           <li class="step">
@@ -248,21 +248,81 @@
           </li>
         </ol>
 
-        <div class="mcp-clients wrap">
-          <div>
-            <p class="mcp-client-label">Claude Desktop</p>
+        <div class="client-tabs wrap" data-client-tabs>
+          <div class="client-tablist" role="tablist" aria-label="Choose your client">
+            <button
+              type="button"
+              class="client-tab is-active"
+              role="tab"
+              aria-selected="true"
+              data-client="claude-code"
+            >
+              Claude Code
+            </button>
+            <button
+              type="button"
+              class="client-tab"
+              role="tab"
+              aria-selected="false"
+              data-client="claude-desktop"
+            >
+              Claude Desktop
+            </button>
+            <button
+              type="button"
+              class="client-tab"
+              role="tab"
+              aria-selected="false"
+              data-client="cursor"
+            >
+              Cursor
+            </button>
+            <button
+              type="button"
+              class="client-tab"
+              role="tab"
+              aria-selected="false"
+              data-client="any"
+            >
+              Any client
+            </button>
+          </div>
+
+          <div class="client-panel" data-client-panel="claude-code">
             <div class="code-block">
               <div class="code-head">
-                <span class="code-file">claude_desktop_config.json</span>
-                <button
-                  type="button"
-                  class="code-copy"
-                  data-copy="#mcp-config-claude"
-                >
+                <span class="code-file">.mcp.json</span>
+                <button type="button" class="code-copy" data-copy="#cfg-claude-code">
                   <span data-copy-label>Copy</span>
                 </button>
               </div>
-              <pre><code id="mcp-config-claude">{
+              <pre><code id="cfg-claude-code">{
+  "mcpServers": {
+    "typetable": {
+      "type": "http",
+      "url": "https://app.typetable.io/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ath_YOUR_TOKEN_HERE"
+      }
+    }
+  }
+}</code></pre>
+            </div>
+            <p class="mcp-note">
+              Add <code>.mcp.json</code> to your project root — or run
+              <code>claude mcp add --transport http typetable https://app.typetable.io/api/mcp --header "Authorization: Bearer ath_…"</code>.
+            </p>
+          </div>
+
+          <div class="client-panel" data-client-panel="claude-desktop" hidden>
+            <div class="code-block">
+              <div class="code-head">
+                <span class="code-file">claude_desktop_config.json</span>
+                <button type="button" class="code-copy" data-copy="#cfg-claude-desktop">
+                  <span data-copy-label>Copy</span>
+                </button>
+              </div>
+              <pre><code id="cfg-claude-desktop">{
   "mcpServers": {
     "typetable": {
       "command": "npx",
@@ -288,20 +348,16 @@
               Desktop — a reload isn't enough.
             </p>
           </div>
-          <div>
-            <p class="mcp-client-label">Cursor</p>
+
+          <div class="client-panel" data-client-panel="cursor" hidden>
             <div class="code-block">
               <div class="code-head">
                 <span class="code-file">.cursor/mcp.json</span>
-                <button
-                  type="button"
-                  class="code-copy"
-                  data-copy="#mcp-config-cursor"
-                >
+                <button type="button" class="code-copy" data-copy="#cfg-cursor">
                   <span data-copy-label>Copy</span>
                 </button>
               </div>
-              <pre><code id="mcp-config-cursor">{
+              <pre><code id="cfg-cursor">{
   "mcpServers": {
     "typetable": {
       "url": "https://app.typetable.io/api/mcp",
@@ -317,22 +373,29 @@
               <code>.cursor/mcp.json</code> in your project, then restart Cursor.
             </p>
           </div>
+
+          <div class="client-panel" data-client-panel="any" hidden>
+            <div class="mcp-facts">
+              <div class="mcp-fact">
+                <span class="mcp-fact-key">Endpoint</span>
+                <span class="mcp-fact-val">https://app.typetable.io/api/mcp</span>
+              </div>
+              <div class="mcp-fact">
+                <span class="mcp-fact-key">Transport</span>
+                <span class="mcp-fact-val">Streamable HTTP</span>
+              </div>
+              <div class="mcp-fact">
+                <span class="mcp-fact-key">Auth</span>
+                <span class="mcp-fact-val">Authorization: Bearer ath_…</span>
+              </div>
+            </div>
+            <p class="mcp-note">
+              Any MCP client that speaks Streamable HTTP works — point it at the
+              endpoint and send the Authorization header.
+            </p>
+          </div>
         </div>
 
-        <div class="mcp-facts wrap">
-          <div class="mcp-fact">
-            <span class="mcp-fact-key">Endpoint</span>
-            <span class="mcp-fact-val">https://app.typetable.io/api/mcp</span>
-          </div>
-          <div class="mcp-fact">
-            <span class="mcp-fact-key">Transport</span>
-            <span class="mcp-fact-val">Streamable HTTP</span>
-          </div>
-          <div class="mcp-fact">
-            <span class="mcp-fact-key">Auth</span>
-            <span class="mcp-fact-val">Authorization: Bearer ath_…</span>
-          </div>
-        </div>
         <p class="mcp-note wrap">
           Tokens are created and revoked in Settings → API tokens; each is shown
           once and stored only as a hash. Self&#8209;hosting TypeTable? Point

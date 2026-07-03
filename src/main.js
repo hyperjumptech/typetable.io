@@ -37,6 +37,25 @@
           });
         });
 
+        document.querySelectorAll("[data-client-tabs]").forEach(function (group) {
+          const tabs = group.querySelectorAll("[data-client]");
+          const panels = group.querySelectorAll("[data-client-panel]");
+          tabs.forEach(function (tab) {
+            tab.addEventListener("click", function () {
+              const name = tab.getAttribute("data-client");
+              tabs.forEach(function (other) {
+                const on = other === tab;
+                other.classList.toggle("is-active", on);
+                other.setAttribute("aria-selected", String(on));
+              });
+              panels.forEach(function (panel) {
+                panel.hidden =
+                  panel.getAttribute("data-client-panel") !== name;
+              });
+            });
+          });
+        });
+
         document.querySelectorAll("[data-copy]").forEach(function (button) {
           button.addEventListener("click", function () {
             const target = document.querySelector(
