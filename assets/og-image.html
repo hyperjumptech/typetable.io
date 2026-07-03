@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf9f7;
+        --white: #ffffff;
+        --black: #000000;
+        --charcoal: #55534e;
+        --oat: #dad4c8;
+        --oat-light: #eee9df;
+        --matcha-600: #078a52;
+        --matcha-800: #02492a;
+        --slushie-500: #3bd3fd;
+        --lemon-500: #fbbd41;
+        --ube-300: #c1b0ff;
+      }
+
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: "DM Sans", system-ui, sans-serif;
+        background: var(--cream);
+        color: var(--black);
+        -webkit-font-smoothing: antialiased;
+        position: relative;
+      }
+
+      .card {
+        position: absolute;
+        inset: 0;
+        padding: 64px 72px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-weight: 600;
+        font-size: 30px;
+        letter-spacing: -0.03em;
+      }
+
+      .logo-mark {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+      }
+
+      .logo-mark span {
+        border-radius: 7px;
+      }
+
+      .logo-mark span:nth-child(1) {
+        background: var(--matcha-600);
+      }
+      .logo-mark span:nth-child(2) {
+        background: var(--slushie-500);
+      }
+      .logo-mark span:nth-child(3) {
+        background: var(--lemon-500);
+      }
+      .logo-mark span:nth-child(4) {
+        background: var(--ube-300);
+      }
+
+      .copy {
+        max-width: 640px;
+      }
+
+      .label {
+        font-family: "Space Mono", monospace;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--charcoal);
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: 76px;
+        font-weight: 600;
+        line-height: 1.04;
+        letter-spacing: -0.03em;
+      }
+
+      h1 .highlight {
+        display: block;
+        color: var(--matcha-800);
+      }
+
+      .sub {
+        margin-top: 26px;
+        font-size: 26px;
+        line-height: 1.45;
+        letter-spacing: -0.01em;
+        color: var(--charcoal);
+        max-width: 600px;
+      }
+
+      .footer {
+        font-family: "Space Mono", monospace;
+        font-size: 19px;
+        color: var(--charcoal);
+      }
+
+      .demo-card {
+        position: absolute;
+        right: -120px;
+        top: 96px;
+        width: 480px;
+        background: var(--white);
+        border: 1.5px solid var(--black);
+        border-radius: 24px;
+        box-shadow: rgb(0, 0, 0) -9px 9px;
+        padding: 34px 38px;
+        transform: rotate(-3deg);
+      }
+
+      .demo-who {
+        font-family: "Space Mono", monospace;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--matcha-600);
+      }
+
+      .demo-card p.title {
+        margin-top: 14px;
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .field-pills {
+        list-style: none;
+        padding: 0;
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .field-pills li {
+        font-size: 17px;
+        font-weight: 500;
+        padding: 7px 16px;
+        border: 1.5px solid var(--oat);
+        border-radius: 999px;
+        background: var(--oat-light);
+        white-space: nowrap;
+      }
+
+      .demo-rule {
+        margin-top: 20px;
+        font-family: "Space Mono", monospace;
+        font-size: 14.5px;
+        color: var(--charcoal);
+      }
+
+      .prompt-card {
+        position: absolute;
+        right: 96px;
+        bottom: 74px;
+        width: 430px;
+        background: var(--black);
+        color: var(--white);
+        border-radius: 20px;
+        box-shadow: rgb(0, 0, 0, 0.18) -6px 6px;
+        padding: 24px 30px;
+        transform: rotate(2deg);
+      }
+
+      .prompt-card .demo-who {
+        color: var(--lemon-500);
+      }
+
+      .prompt-card p {
+        margin-top: 10px;
+        font-size: 19px;
+        line-height: 1.45;
+        letter-spacing: -0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="logo">
+        <span class="logo-mark">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        TypeTable
+      </div>
+
+      <div class="copy">
+        <p class="label">Team logs, built by describing them</p>
+        <h1>
+          Say what to record.
+          <span class="highlight">Fill it in instantly.</span>
+        </h1>
+        <p class="sub">
+          Describe the log. TypeTable builds the table, enforces the rules, and
+          your team adds records in plain language.
+        </p>
+      </div>
+
+      <div class="footer">typetable.io</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-who">TypeTable · proposed schema</span>
+      <p class="title">Safety incidents</p>
+      <ul class="field-pills">
+        <li>Date</li>
+        <li>Site</li>
+        <li>Severity</li>
+        <li>Reporter</li>
+        <li>Follow-up owner</li>
+        <li>Status</li>
+      </ul>
+      <p class="demo-rule">Severity → Low / Med / High</p>
+    </div>
+
+    <div class="prompt-card">
+      <span class="demo-who">You</span>
+      <p>
+        "I need to record safety incidents across our 12 sites — date, site,
+        severity, reporter, follow-up owner."
+      </p>
+    </div>
+  </body>
+</html>
