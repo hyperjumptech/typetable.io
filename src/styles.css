@@ -17,7 +17,7 @@
   --ube-800: #43089f;
   --pomegranate: #fc7981;
   --font-display: "DM Sans", system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, Menlo, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   --shadow-clay:
     rgba(0, 0, 0, 0.1) 0px 1px 1px, rgba(0, 0, 0, 0.04) 0px -1px 1px inset,
     rgba(0, 0, 0, 0.05) 0px -0.5px 1px;
@@ -1048,7 +1048,7 @@ h1 .highlight {
 .pricing-grid {
   display: grid;
   gap: 1.25rem;
-  max-width: 56rem;
+  max-width: var(--max);
   margin: 0 auto;
   align-items: stretch;
 }
@@ -1057,7 +1057,7 @@ h1 .highlight {
   .pricing-grid {
     /* auto-fit keeps 2 cards centered now and expands to 3 columns
        when the Team plan is re-enabled */
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 17.5rem));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 26rem));
     justify-content: center;
   }
 }
@@ -1146,7 +1146,7 @@ h1 .highlight {
 
 /* FAQ */
 .faq-list {
-  max-width: 40rem;
+  max-width: var(--max);
   margin: 0 auto;
   background: var(--white);
   border: 1px solid var(--oat);
@@ -1229,7 +1229,7 @@ h1 .highlight {
 }
 
 .cta-inner {
-  max-width: 40rem;
+  max-width: var(--max);
   margin: 0 auto;
   padding: clamp(2rem, 5vw, 3rem);
   text-align: center;
@@ -1244,7 +1244,8 @@ h1 .highlight {
 }
 
 .cta-inner .lead {
-  margin: 0.75rem 0 1.75rem;
+  max-width: 36rem;
+  margin: 0.75rem auto 1.75rem;
   color: var(--black);
 }
 
@@ -2326,22 +2327,6 @@ h1 .highlight {
   color: var(--silver);
 }
 
-/* optional scroll-in, guarded so reduced-motion users get the static layout */
-@media (prefers-reduced-motion: no-preference) {
-  .uc-story-row {
-    opacity: 0;
-    transform: translateY(14px);
-    animation: uc-rise 0.5s ease forwards;
-    animation-timeline: view();
-    animation-range: entry 4% cover 22%;
-  }
-  @keyframes uc-rise {
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-}
 
 /* ============================================================
          MCP (connect your agents)
@@ -2418,7 +2403,7 @@ h1 .highlight {
   gap: clamp(1.75rem, 4vw, 3rem);
   max-width: var(--max);
   margin: 0 auto;
-  align-items: center;
+  align-items: start;
 }
 
 @media (min-width: 900px) {
