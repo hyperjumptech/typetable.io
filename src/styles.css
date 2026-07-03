@@ -912,8 +912,8 @@ h1 .highlight {
 .chat-input-fake {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
+  gap: 0.55rem;
+  padding: 0.5rem 0.6rem;
   background: var(--white);
   border-top: 1px solid var(--oat);
   font-size: 0.75rem;
@@ -923,10 +923,25 @@ h1 .highlight {
 .chat-input-fake::before {
   content: "";
   flex: 1;
-  height: 1.75rem;
+  height: 1.85rem;
   background: var(--cream);
   border: 1px solid var(--oat);
   border-radius: var(--radius-pill);
+}
+
+.chat-input-fake::after {
+  content: "";
+  flex: none;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--black);
+  background-color: var(--matcha-300);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='18' y2='12'/%3E%3Cpolyline points='12 6 18 12 12 18'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.95rem;
+  box-shadow: var(--shadow-clay);
 }
 
 /* Features */
@@ -1899,4 +1914,431 @@ h1 .highlight {
 
 .uc-detail .uc-cta {
   margin-top: clamp(2.5rem, 6vw, 3.5rem);
+}
+
+/* ============================================================
+         Use case narrative (zigzag story)
+         ============================================================ */
+
+/* promoted page title: use-case name is the page <h1>, sized like the
+   old <h2> so nothing shifts visually */
+.uc-detail .section-head h1 {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  letter-spacing: -0.02em;
+}
+
+.uc-story {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.75rem, 7vw, 5rem);
+  max-width: var(--max);
+  margin: clamp(2.5rem, 6vw, 4rem) auto 0;
+}
+
+.uc-story-row {
+  display: grid;
+  gap: clamp(1.25rem, 4vw, 2rem);
+}
+
+/* grid children must be allowed to shrink or a nowrap .tt-scroll table
+   forces the column past 1fr and breaks the split / scrolls the page */
+.uc-story-copy,
+.uc-story-media {
+  min-width: 0;
+}
+
+.uc-story-media > .chat,
+.uc-story-media > .tt-result,
+.uc-story-media > .use-case-chats {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .uc-story-row {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  /* even beats: media flips to the left WITHOUT changing DOM order,
+     so reading + tab order stay copy-first */
+  .uc-story-row:nth-child(even) .uc-story-media {
+    order: -1;
+  }
+  .uc-story-row--top {
+    align-items: start;
+  }
+}
+
+/* full-width beat (the creator-vs-contributor two-column demo) */
+.uc-story-row--wide {
+  display: block;
+  text-align: center;
+}
+
+.uc-story-row--wide .uc-story-copy {
+  max-width: 40rem;
+  margin: 0 auto clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.uc-story-row--wide .uc-story-eyebrow {
+  justify-content: center;
+}
+
+.uc-story-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.uc-story-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0 0 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
+.uc-story-step {
+  display: inline-grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  font-size: 0.6875rem;
+  color: var(--black);
+  background: var(--lemon-400);
+  border: 1.5px solid var(--black);
+  border-radius: var(--radius-pill);
+}
+
+.uc-story-row--matcha .uc-story-step {
+  background: var(--matcha-300);
+}
+.uc-story-row--slushie .uc-story-step {
+  background: color-mix(in srgb, var(--slushie-500) 55%, var(--white));
+}
+.uc-story-row--ube .uc-story-step {
+  background: var(--ube-300);
+}
+.uc-story-row--pom .uc-story-step {
+  background: color-mix(in srgb, var(--pomegranate) 65%, var(--white));
+}
+
+.uc-story-row h3 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+}
+
+.uc-story-copy p:not([class]) {
+  margin: 0;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.55;
+  color: var(--charcoal);
+}
+
+.uc-story-copy p:not([class]) + p:not([class]) {
+  margin-top: 0.85rem;
+}
+
+.uc-story-copy strong {
+  color: var(--black);
+}
+
+.uc-story-note {
+  margin: 0.85rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  color: var(--silver);
+}
+
+/* inline aggregate-answer bubble (a --bot bubble promoted to a card) */
+.chat-msg--stat {
+  align-self: stretch;
+  max-width: 100%;
+  background: var(--white);
+  border: 2px solid var(--black);
+  box-shadow: var(--shadow-clay);
+}
+
+.chat-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.chat-stat-num {
+  font-family: var(--font-mono);
+  font-size: clamp(1.6rem, 5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--black);
+}
+
+.chat-stat-unit {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.chat-stat-caption {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.02em;
+  color: var(--silver);
+}
+
+/* validation-reject bubble (a bad entry politely refused) */
+.chat-msg--reject {
+  align-self: flex-start;
+  background: color-mix(in srgb, var(--pomegranate) 26%, var(--white));
+  border: 1px solid var(--pomegranate);
+  color: color-mix(in srgb, var(--pomegranate) 55%, var(--black));
+  font-weight: 600;
+}
+
+.chat-msg--reject .chat-msg-label {
+  color: color-mix(in srgb, var(--pomegranate) 45%, var(--black));
+}
+
+.chat-rule--reject {
+  color: color-mix(in srgb, var(--pomegranate) 55%, var(--black));
+  font-weight: 700;
+}
+
+/* pure-CSS bar chart, framed like a .tt-result */
+.tt-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem 1.1rem 1.15rem;
+  background: var(--white);
+}
+
+.tt-chart-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 3.5rem;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.tt-chart-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tt-chart-track {
+  height: 1.1rem;
+  background: var(--oat-light);
+  border: 1.5px solid var(--black);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.tt-chart-bar {
+  height: 100%;
+  width: var(--val, 50%);
+  background: var(--matcha-300);
+  border-right: 2px solid var(--black);
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+}
+
+.tt-chart-bar--number {
+  background: var(--lemon-400);
+}
+.tt-chart-bar--enum {
+  background: var(--ube-300);
+}
+.tt-chart-bar--cool {
+  background: color-mix(in srgb, var(--slushie-500) 55%, var(--white));
+}
+.tt-chart-bar--hot {
+  background: color-mix(in srgb, var(--pomegranate) 70%, var(--white));
+}
+
+.tt-chart-val {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-align: right;
+  color: var(--black);
+}
+
+/* trend / area chart: CSS area + a crisp inline-SVG line */
+.tt-chart--area {
+  gap: 0;
+  padding: 0;
+}
+
+.tt-chart-plot {
+  position: relative;
+  height: 9rem;
+  background: repeating-linear-gradient(
+      to top,
+      var(--oat-light) 0 1px,
+      transparent 1px 25%
+    )
+    var(--white);
+}
+
+.tt-chart-plot svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tt-area-fill {
+  fill: color-mix(in srgb, var(--matcha-300) 50%, var(--white));
+}
+
+.tt-area-line {
+  fill: none;
+  stroke: var(--black);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.tt-chart-xlabels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.1rem 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--silver);
+}
+
+/* lock + share affordances on a .tt-result */
+.tt-lock {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--lemon-400);
+  border: 1.5px solid var(--black);
+  border-radius: var(--radius-pill);
+}
+
+.tt-lock--live {
+  background: var(--matcha-300);
+}
+
+.tt-lock--live::before {
+  content: "●";
+  font-size: 0.6rem;
+  color: var(--matcha-600);
+}
+
+/* live/lock chip sitting in the dark result header */
+.tt-result-head .tt-lock {
+  margin-left: auto;
+}
+
+.tt-share {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 1.1rem;
+  background: var(--white);
+  border-top: 1px solid var(--oat);
+}
+
+.tt-avatars {
+  display: flex;
+}
+
+.tt-avatar {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: -0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--black);
+  background: var(--ube-300);
+  border: 2px solid var(--black);
+  border-radius: 50%;
+}
+
+.tt-avatar:first-child {
+  margin-left: 0;
+}
+.tt-avatar:nth-child(2) {
+  background: var(--lemon-400);
+}
+.tt-avatar:nth-child(3) {
+  background: color-mix(in srgb, var(--slushie-500) 55%, var(--white));
+}
+.tt-avatar:nth-child(4) {
+  background: var(--matcha-300);
+}
+.tt-avatar--more {
+  background: var(--oat-light);
+  color: var(--charcoal);
+}
+
+.tt-perm {
+  padding: 0.15rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  background: var(--white);
+}
+
+.tt-perm--edit {
+  background: var(--matcha-300);
+}
+.tt-perm--view {
+  background: var(--oat-light);
+  color: var(--charcoal);
+}
+
+.tt-share-note {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--silver);
+}
+
+/* optional scroll-in, guarded so reduced-motion users get the static layout */
+@media (prefers-reduced-motion: no-preference) {
+  .uc-story-row {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: uc-rise 0.5s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 4% cover 22%;
+  }
+  @keyframes uc-rise {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }

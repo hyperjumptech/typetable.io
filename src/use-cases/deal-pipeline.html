@@ -3,8 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TypeTable — Deal pipeline</title>
-    <meta name="description" content="See how a sales team runs its deal pipeline in TypeTable: describe it once, and TypeTable enforces the stages while anyone updates deals in plain language." />
+    <title>Deal pipeline tracker — build one by chatting · TypeTable</title>
+    <meta
+      name="description"
+      content="Sales deals stuck in a spreadsheet that never matches the forecast? Describe your pipeline once and TypeTable builds it — the team updates deals in plain language, and you lock it for the forecast. No spreadsheets, no setup."
+    />
+    <link rel="canonical" href="https://typetable.io/use-cases/deal-pipeline.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="TypeTable" />
+    <meta property="og:title" content="Deal pipeline tracker — build one by chatting" />
+    <meta
+      property="og:description"
+      content="Describe your sales pipeline once and TypeTable builds it. The team updates deals in plain language; you lock it for the forecast."
+    />
+    <meta property="og:url" content="https://typetable.io/use-cases/deal-pipeline.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Deal pipeline tracker — build one by chatting" />
+    <meta
+      name="twitter:description"
+      content="Describe your sales pipeline once and TypeTable builds it. The team updates deals in plain language; you lock it for the forecast."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,6 +30,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://typetable.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://typetable.io/use-cases/" },
+          { "@type": "ListItem", "position": 3, "name": "Deal pipeline", "item": "https://typetable.io/use-cases/deal-pipeline.html" }
+        ]
+      }
+    </script>
   </head>
   <body class="page-use-cases">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -49,22 +78,22 @@
             </button>
             <div class="nav-dropdown-menu" data-dropdown-menu>
               <a href="deal-pipeline.html" aria-current="page"
-                >Deal pipeline<span>Sales &amp; CRM</span></a
+                >Deal pipeline<span>Sales</span></a
               >
-              <a href="bug-triage.html"
-                >Bug &amp; issue triage<span>Customer support</span></a
+              <a href="customer-feedback.html"
+                >Customer feedback<span>Product</span></a
               >
               <a href="expense-log.html"
-                >Expense &amp; reimbursement log<span>Finance</span></a
+                >Expenses &amp; reimbursements<span>Finance</span></a
               >
               <a href="interview-scorecards.html"
-                >Interview scorecards<span>People &amp; HR</span></a
-              >
-              <a href="maintenance-log.html"
-                >Equipment maintenance log<span>Field operations</span></a
+                >Interview notes<span>Hiring</span></a
               >
               <a href="campaign-tracker.html"
-                >Campaign tracker<span>Marketing</span></a
+                >Content calendar<span>Marketing</span></a
+              >
+              <a href="inventory-tracker.html"
+                >Inventory<span>Operations</span></a
               >
             </div>
           </div>
@@ -101,21 +130,19 @@
         <a class="mobile-nav-sub" href="deal-pipeline.html" aria-current="page"
           >Deal pipeline</a
         >
-        <a class="mobile-nav-sub" href="bug-triage.html"
-          >Bug &amp; issue triage</a
+        <a class="mobile-nav-sub" href="customer-feedback.html"
+          >Customer feedback</a
         >
         <a class="mobile-nav-sub" href="expense-log.html"
-          >Expense &amp; reimbursement log</a
+          >Expenses &amp; reimbursements</a
         >
         <a class="mobile-nav-sub" href="interview-scorecards.html"
-          >Interview scorecards</a
-        >
-        <a class="mobile-nav-sub" href="maintenance-log.html"
-          >Equipment maintenance log</a
+          >Interview notes</a
         >
         <a class="mobile-nav-sub" href="campaign-tracker.html"
-          >Campaign tracker</a
+          >Content calendar</a
         >
+        <a class="mobile-nav-sub" href="inventory-tracker.html">Inventory</a>
         <a href="../index.html#teams">Teams</a>
         <a href="../index.html#features">Features</a>
         <a href="../index.html#pricing">Pricing</a>
@@ -133,205 +160,396 @@
     <main id="main">
       <section class="section uc-detail">
         <div class="section-head wrap">
-          <p class="label">For Sales &amp; CRM</p>
-          <h2>Deal pipeline</h2>
-          <p class="lead">Account execs were keeping deals in a spreadsheet that never matched the forecast. Describe the pipeline once and TypeTable locks the stages, so every update stays clean and shared.</p>
+          <p class="label">For Sales</p>
+          <h1>Deal pipeline</h1>
+          <p class="lead">
+            Sales teams keep deals in a spreadsheet that never matches the
+            forecast. Here's how a team rebuilds the whole pipeline in
+            TypeTable — just by describing it, in an afternoon.
+          </p>
           <ul class="uc-outcome uc-outcome--center">
-              <li>Built in one message</li>
-              <li>6 fields</li>
-              <li>Stage validated</li>
+            <li>Built by chatting</li>
+            <li>Team updates in plain language</li>
+            <li>Locked for the forecast</li>
           </ul>
         </div>
 
-        <div class="uc-detail-body wrap">
-            <div class="use-case-chats">
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--create"
-                  >Create table</span
-                >
-                <div
-                  class="chat chat--creator"
-                  aria-label="Creator chat: deal pipeline"
-                >
-                  <div class="chat-bar">
-                    <strong>Sales ops lead</strong>
-                    <span>Creates the pipeline</span>
+        <div class="uc-story wrap">
+          <div class="uc-story-row uc-story-row--pom">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">01</span> The problem
+              </p>
+              <h3>The forecast is a guess</h3>
+              <p>
+                Every rep keeps deals in their own tab. Stages are spelled five
+                different ways, values are stale, and by Friday nobody trusts
+                the number. Someone rebuilds the sheet by hand before every
+                review.
+              </p>
+              <p>
+                Nobody wants a CRM project. They just want the list to be
+                <strong>right</strong>.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat" aria-label="Describing the problem">
+                <div class="chat-bar">
+                  <strong>Sales ops</strong>
+                  <span>The problem today</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Our deals are scattered across everyone's spreadsheets.
+                      The forecast never matches reality.
+                    </p>
                   </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Our AEs keep deals in a messy sheet. I want to track
-                        account, stage, value, owner, expected close date, and
-                        the next step.
-                      </p>
+                  <div class="chat-msg chat-msg--bot">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <p>
+                      Let's give the team one shared pipeline. Tell me what you
+                      track on a deal and I'll build it.
+                    </p>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--top uc-story-row--ube">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">02</span> Just describe it
+              </p>
+              <h3>Say it in a sentence</h3>
+              <p>
+                You type what a deal looks like in plain English. TypeTable
+                proposes the table — the fields, the types, and the rules — and
+                waits for you to approve.
+              </p>
+              <p>
+                The stage becomes a fixed list, so "in progress" and "almost
+                closed" can never sneak in again.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat chat--creator" aria-label="Creating the pipeline">
+                <div class="chat-bar">
+                  <strong>Sales ops</strong>
+                  <span>Creates the pipeline</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Track account, stage, value, owner, expected close date,
+                      and the next step.
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--schema">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <strong>Deal pipeline</strong>
+                    <p>Here's the table I'd create:</p>
+                    <ul class="chat-pills">
+                      <li>Account</li>
+                      <li>Stage</li>
+                      <li>Value</li>
+                      <li>Owner</li>
+                      <li>Close date</li>
+                      <li>Next step</li>
+                    </ul>
+                    <p class="chat-rule">
+                      Stage must be one of Lead · Qualified · Proposal · Won ·
+                      Lost. Value in USD.
+                    </p>
+                    <div class="chat-actions">
+                      <span class="chat-chip chat-chip--primary">Approve</span>
+                      <span class="chat-chip">Edit fields</span>
                     </div>
-                    <div class="chat-msg chat-msg--bot chat-msg--schema">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <strong>Deal pipeline</strong>
-                      <p>Here's the table I'd create:</p>
-                      <ul class="chat-pills">
-                        <li>Account</li>
-                        <li>Stage</li>
-                        <li>Value</li>
-                        <li>Owner</li>
-                        <li>Close date</li>
-                        <li>Next step</li>
-                      </ul>
-                      <p class="chat-rule">
-                        Stage → Lead / Qualified / Proposal / Won / Lost · Value
-                        in USD
-                      </p>
-                      <div class="chat-actions">
-                        <span class="chat-chip chat-chip--primary">Approve</span>
-                        <span class="chat-chip">Edit fields</span>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--matcha">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">03</span> It's ready
+              </p>
+              <h3>Live in seconds, not a sprint</h3>
+              <p>
+                Hit approve and the pipeline is real — a proper, typed table you
+                can share with the whole team. No schema to design, no admin
+                panel to wire up.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="tt-result">
+                <div class="tt-result-head">
+                  <span class="tt-result-title">Deal pipeline</span>
+                  <span class="tt-lock tt-lock--live">Live</span>
+                </div>
+                <div class="tt-scroll">
+                  <table class="tt-table">
+                    <thead>
+                      <tr>
+                        <th><span class="tt-col">account</span><span class="tt-type">text</span></th>
+                        <th><span class="tt-col">stage</span><span class="tt-type tt-type--enum">enum</span></th>
+                        <th><span class="tt-col">value</span><span class="tt-type tt-type--number">number</span></th>
+                        <th><span class="tt-col">close_date</span><span class="tt-type tt-type--date">date</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Acme Corp</td>
+                        <td><span class="tt-badge tt-badge--cool">Proposal</span></td>
+                        <td class="tt-mono">$48,000</td>
+                        <td class="tt-mono">Jul 31</td>
+                      </tr>
+                      <tr>
+                        <td>Globex</td>
+                        <td><span class="tt-badge tt-badge--good">Won</span></td>
+                        <td class="tt-mono">$72,000</td>
+                        <td class="tt-mono">Jun 20</td>
+                      </tr>
+                      <tr>
+                        <td>Initech</td>
+                        <td><span class="tt-badge tt-badge--warn">Qualified</span></td>
+                        <td class="tt-mono">$15,000</td>
+                        <td class="tt-mono">Aug 14</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tt-result-foot">
+                  Rules enforced on every insert
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--wide">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">04</span> The team just types
+              </p>
+              <h3>Reps update deals by talking</h3>
+              <p>
+                No forms, no training. You set it up once; reps just say what
+                changed. TypeTable finds the deal, applies the rules, and saves
+                it clean.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="use-case-chats">
+                <div class="use-case-chat-col">
+                  <span class="use-case-flow-badge use-case-flow-badge--create"
+                    >Set it up once</span
+                  >
+                  <div class="chat chat--creator" aria-label="Sales ops sets it up">
+                    <div class="chat-bar">
+                      <strong>Sales ops</strong>
+                      <span>Sales ops</span>
+                    </div>
+                    <div class="chat-thread">
+                      <div class="chat-msg chat-msg--user">
+                        <span class="chat-msg-label">You</span>
+                        <p>
+                          Acme moved to proposal, $48k, closing end of July,
+                          next step is send pricing.
+                        </p>
+                      </div>
+                      <div class="chat-msg chat-msg--success">
+                        <span class="chat-msg-label">TypeTable</span>
+                        <p>Saved — Acme Corp, Proposal, $48,000, closing Jul 31.</p>
                       </div>
                     </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Approve</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Created. <strong>Deal pipeline</strong> is live — share
-                        it with the AE team.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Acme Corp moved to proposal, $48k, I own it, closing end
-                        of July, next step is send pricing.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Saved — Acme Corp, Proposal, $48,000, closing Jul 31.</p>
-                    </div>
+                    <div class="chat-input-fake" aria-hidden="true"></div>
                   </div>
-                  <div class="chat-input-fake" aria-hidden="true">
-                    Describe or record…
+                </div>
+                <div class="use-case-chat-col">
+                  <span class="use-case-flow-badge use-case-flow-badge--record"
+                    >Anyone adds records</span
+                  >
+                  <div
+                    class="chat chat--contributor"
+                    aria-label="A rep updates a deal"
+                  >
+                    <div class="chat-bar">
+                      <strong>Account exec</strong>
+                      <span>Updates a deal</span>
+                    </div>
+                    <div class="chat-thread">
+                      <div class="chat-msg chat-msg--user">
+                        <span class="chat-msg-label">You</span>
+                        <p>Globex signed. Won, $72k.</p>
+                      </div>
+                      <div class="chat-msg chat-msg--bot">
+                        <span class="chat-msg-label">TypeTable</span>
+                        <p>
+                          Set Globex to <strong>Won</strong> at $72,000.
+                          Anything for next step?
+                        </p>
+                      </div>
+                      <div class="chat-msg chat-msg--user">
+                        <span class="chat-msg-label">You</span>
+                        <p>Kick off onboarding next week</p>
+                      </div>
+                      <div class="chat-msg chat-msg--success">
+                        <span class="chat-msg-label">TypeTable</span>
+                        <p>Saved — Globex, Won, $72,000, next: kick off onboarding.</p>
+                      </div>
+                    </div>
+                    <div class="chat-input-fake" aria-hidden="true"></div>
                   </div>
                 </div>
               </div>
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--record"
-                  >Enter record</span
-                >
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--top uc-story-row--slushie">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">05</span> Ask a question, get an answer
+              </p>
+              <h3>"What's my pipeline worth?"</h3>
+              <p>
+                No pivot tables. You ask in plain language and get the number
+                back instantly — plus a chart you can drop straight into the
+                Monday review.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat" aria-label="Asking for the pipeline total">
+                <div class="chat-bar">
+                  <strong>Sales ops</strong>
+                  <span>Asks a question</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>What's my total open pipeline right now?</p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--stat">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <div class="chat-stat">
+                      <span class="chat-stat-num">$462K</span>
+                      <span class="chat-stat-unit">open</span>
+                    </div>
+                    <p class="chat-stat-caption">
+                      sum of value · 18 open deals
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>Break it down by stage as a chart</p>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+              <div class="tt-result" style="margin-top: 0.85rem">
+                <div class="tt-result-head">
+                  <span class="tt-result-title">Deal value by stage</span>
+                  <span class="tt-result-meta">USD</span>
+                </div>
                 <div
-                  class="chat chat--contributor"
-                  aria-label="Contributor chat: deal pipeline"
+                  class="tt-chart"
+                  role="img"
+                  aria-label="Deal value by stage: Proposal $180K, Qualified $120K, Won $92K, Lead $70K"
                 >
-                  <div class="chat-bar">
-                    <strong>Account exec</strong>
-                    <span>Updates a deal</span>
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Proposal</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar tt-chart-bar--cool" style="--val: 100%"></span
+                    ></span>
+                    <span class="tt-chart-val">$180K</span>
                   </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Update the Globex deal</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Found Globex — currently Qualified. What changed?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>They signed. Won, $72k.</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Set stage to <strong>Won</strong> and value to $72,000.
-                        Anything for next step?
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Kick off onboarding next week</p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Saved — Globex, Won, $72,000, next step: kick off
-                        onboarding.
-                      </p>
-                    </div>
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Qualified</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar" style="--val: 67%"></span
+                    ></span>
+                    <span class="tt-chart-val">$120K</span>
                   </div>
-                  <div class="chat-input-fake" aria-hidden="true">
-                    Record in plain language…
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Won</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar tt-chart-bar--number" style="--val: 51%"></span
+                    ></span>
+                    <span class="tt-chart-val">$92K</span>
+                  </div>
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Lead</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar tt-chart-bar--enum" style="--val: 39%"></span
+                    ></span>
+                    <span class="tt-chart-val">$70K</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="tt-result">
-              <div class="tt-result-head">
-                <span class="tt-result-title">Deal pipeline</span>
-                <span class="tt-result-meta">18 records · updated just now</span>
+          </div>
+
+          <div class="uc-story-row uc-story-row--matcha">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">06</span> Keep it trustworthy
+              </p>
+              <h3>Lock the forecast so it holds still</h3>
+              <p>
+                Once the number is agreed, you freeze it. The pipeline becomes
+                read-only — a clean snapshot for the quarter that nobody can
+                quietly edit after the fact.
+              </p>
+              <p class="uc-story-note">Unlock any time to keep working.</p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat" aria-label="Locking the pipeline">
+                <div class="chat-bar">
+                  <strong>Sales ops</strong>
+                  <span>Locks the forecast</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>Freeze the pipeline for our Q3 forecast.</p>
+                  </div>
+                  <div class="chat-msg chat-msg--success">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <p>
+                      Locked. Rows are read-only until you unlock — the Q3
+                      snapshot won't change.
+                    </p>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
               </div>
-              <div class="tt-scroll">
-                <table class="tt-table">
-                  <thead>
-                    <tr>
-                      <th><span class="tt-col">account</span><span class="tt-type">text</span></th>
-                      <th><span class="tt-col">stage</span><span class="tt-type tt-type--enum">enum</span></th>
-                      <th><span class="tt-col">value</span><span class="tt-type tt-type--number">number</span></th>
-                      <th><span class="tt-col">owner</span><span class="tt-type">text</span></th>
-                      <th><span class="tt-col">close_date</span><span class="tt-type tt-type--date">date</span></th>
-                      <th><span class="tt-col">next_step</span><span class="tt-type">text</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Acme Corp</td>
-                      <td><span class="tt-badge tt-badge--cool">Proposal</span></td>
-                      <td class="tt-mono">$48,000</td>
-                      <td>You</td>
-                      <td class="tt-mono">Jul 31</td>
-                      <td>Send pricing</td>
-                    </tr>
-                    <tr>
-                      <td>Globex</td>
-                      <td><span class="tt-badge tt-badge--good">Won</span></td>
-                      <td class="tt-mono">$72,000</td>
-                      <td>Dana</td>
-                      <td class="tt-mono">Jun 20</td>
-                      <td>Kick off onboarding</td>
-                    </tr>
-                    <tr>
-                      <td>Initech</td>
-                      <td><span class="tt-badge tt-badge--warn">Qualified</span></td>
-                      <td class="tt-mono">$15,000</td>
-                      <td>Priya</td>
-                      <td class="tt-mono">Aug 14</td>
-                      <td>Book demo</td>
-                    </tr>
-                    <tr>
-                      <td>Umbrella</td>
-                      <td><span class="tt-badge tt-badge--muted">Lead</span></td>
-                      <td class="tt-mono">$9,500</td>
-                      <td>Sam</td>
-                      <td class="tt-mono">—</td>
-                      <td>Intro call</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="tt-result-foot">
-                Showing 4 of 18 · rules enforced on every insert
+              <div class="tt-result" style="margin-top: 0.85rem">
+                <div class="tt-result-head">
+                  <span class="tt-result-title">Deal pipeline</span>
+                  <span class="tt-lock">Locked · Q3</span>
+                </div>
+                <div class="tt-result-foot">
+                  Snapshot frozen · 18 deals · $462K
+                </div>
               </div>
             </div>
+          </div>
         </div>
 
         <div class="uc-more">
           <p class="label">More use cases</p>
           <nav class="uc-nav" aria-label="Other use cases">
-            <a href="bug-triage.html">Bug &amp; issue triage</a>
-            <a href="expense-log.html">Expense &amp; reimbursement log</a>
-            <a href="interview-scorecards.html">Interview scorecards</a>
-            <a href="maintenance-log.html">Equipment maintenance log</a>
-            <a href="campaign-tracker.html">Campaign tracker</a>
+            <a href="customer-feedback.html">Customer feedback</a>
+            <a href="expense-log.html">Expenses &amp; reimbursements</a>
+            <a href="interview-scorecards.html">Interview notes</a>
+            <a href="campaign-tracker.html">Content calendar</a>
+            <a href="inventory-tracker.html">Inventory</a>
           </nav>
         </div>
 
