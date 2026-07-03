@@ -375,6 +375,20 @@ h1 .highlight {
   color: var(--matcha-800);
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.hero-note {
+  margin: 0.875rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--charcoal);
+}
+
 /* Product demo */
 .product-demo {
   position: relative;
@@ -1026,7 +1040,10 @@ h1 .highlight {
 
 @media (min-width: 768px) {
   .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
+    /* auto-fit keeps 2 cards centered now and expands to 3 columns
+       when the Team plan is re-enabled */
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 17.5rem));
+    justify-content: center;
   }
 }
 
