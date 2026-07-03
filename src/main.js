@@ -37,6 +37,47 @@
           });
         });
 
+        document.querySelectorAll("[data-client-tabs]").forEach(function (group) {
+          const tabs = group.querySelectorAll("[data-client]");
+          const panels = group.querySelectorAll("[data-client-panel]");
+          tabs.forEach(function (tab) {
+            tab.addEventListener("click", function () {
+              const name = tab.getAttribute("data-client");
+              tabs.forEach(function (other) {
+                const on = other === tab;
+                other.classList.toggle("is-active", on);
+                other.setAttribute("aria-selected", String(on));
+              });
+              panels.forEach(function (panel) {
+                panel.hidden =
+                  panel.getAttribute("data-client-panel") !== name;
+              });
+            });
+          });
+        });
+
+        document.querySelectorAll("[data-copy]").forEach(function (button) {
+          button.addEventListener("click", function () {
+            const target = document.querySelector(
+              button.getAttribute("data-copy")
+            );
+            if (!target || !navigator.clipboard) return;
+            navigator.clipboard
+              .writeText(target.innerText)
+              .then(function () {
+                const label = button.querySelector("[data-copy-label]");
+                const previous = label ? label.textContent : null;
+                button.classList.add("is-copied");
+                if (label) label.textContent = "Copied";
+                setTimeout(function () {
+                  button.classList.remove("is-copied");
+                  if (label && previous !== null) label.textContent = previous;
+                }, 1600);
+              })
+              .catch(function () {});
+          });
+        });
+
         document.querySelectorAll(".faq-item").forEach(function (item) {
           const trigger = item.querySelector(".faq-trigger");
           const panel = item.querySelector(".faq-panel");

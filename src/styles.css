@@ -17,7 +17,7 @@
   --ube-800: #43089f;
   --pomegranate: #fc7981;
   --font-display: "DM Sans", system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, Menlo, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   --shadow-clay:
     rgba(0, 0, 0, 0.1) 0px 1px 1px, rgba(0, 0, 0, 0.04) 0px -1px 1px inset,
     rgba(0, 0, 0, 0.05) 0px -0.5px 1px;
@@ -1048,7 +1048,7 @@ h1 .highlight {
 .pricing-grid {
   display: grid;
   gap: 1.25rem;
-  max-width: 56rem;
+  max-width: var(--max);
   margin: 0 auto;
   align-items: stretch;
 }
@@ -1057,7 +1057,7 @@ h1 .highlight {
   .pricing-grid {
     /* auto-fit keeps 2 cards centered now and expands to 3 columns
        when the Team plan is re-enabled */
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 17.5rem));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 26rem));
     justify-content: center;
   }
 }
@@ -1146,7 +1146,7 @@ h1 .highlight {
 
 /* FAQ */
 .faq-list {
-  max-width: 40rem;
+  max-width: var(--max);
   margin: 0 auto;
   background: var(--white);
   border: 1px solid var(--oat);
@@ -1229,7 +1229,7 @@ h1 .highlight {
 }
 
 .cta-inner {
-  max-width: 40rem;
+  max-width: var(--max);
   margin: 0 auto;
   padding: clamp(2rem, 5vw, 3rem);
   text-align: center;
@@ -1244,7 +1244,8 @@ h1 .highlight {
 }
 
 .cta-inner .lead {
-  margin: 0.75rem 0 1.75rem;
+  max-width: 36rem;
+  margin: 0.75rem auto 1.75rem;
   color: var(--black);
 }
 
@@ -2326,19 +2327,273 @@ h1 .highlight {
   color: var(--silver);
 }
 
-/* optional scroll-in, guarded so reduced-motion users get the static layout */
-@media (prefers-reduced-motion: no-preference) {
-  .uc-story-row {
-    opacity: 0;
-    transform: translateY(14px);
-    animation: uc-rise 0.5s ease forwards;
-    animation-timeline: view();
-    animation-range: entry 4% cover 22%;
+
+/* ============================================================
+         MCP (connect your agents)
+         ============================================================ */
+
+/* code block */
+.code-block {
+  background: var(--black);
+  border: 2px solid var(--black);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-clay);
+  overflow: hidden;
+}
+
+.code-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.6rem 0.55rem 0.95rem;
+  background: color-mix(in srgb, var(--black) 82%, var(--charcoal));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.code-file {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--oat);
+}
+
+.code-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  background: var(--matcha-300);
+  border: 1.5px solid var(--black);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.code-copy:hover {
+  background: color-mix(in srgb, var(--slushie-500) 60%, var(--white));
+}
+
+.code-copy.is-copied {
+  background: var(--lemon-400);
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+}
+
+.code-block code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--cream);
+  white-space: pre;
+}
+
+/* landing MCP band: copy + code side by side */
+.mcp-split {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  max-width: var(--max);
+  margin: 0 auto;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .mcp-split {
+    grid-template-columns: 1fr 1fr;
   }
-  @keyframes uc-rise {
-    to {
-      opacity: 1;
-      transform: none;
-    }
+}
+
+.mcp-copy,
+.mcp-code {
+  min-width: 0;
+}
+
+.mcp-points {
+  list-style: none;
+  margin: 1.25rem 0 1.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.mcp-points li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--charcoal);
+  line-height: 1.5;
+}
+
+.mcp-points li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--matcha-600);
+}
+
+.mcp-points strong {
+  color: var(--black);
+}
+
+.mcp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* MCP page bits */
+.mcp-page .section-head h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  letter-spacing: -0.03em;
+}
+
+.mcp-clients {
+  display: grid;
+  gap: 1.25rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* let grid items shrink so wide config lines scroll inside the code block
+   instead of stretching the column past the viewport */
+.mcp-clients > * {
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .mcp-clients {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
   }
+}
+
+.mcp-client-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
+.mcp-facts {
+  max-width: var(--max);
+  margin: clamp(1.5rem, 4vw, 2.25rem) auto 0;
+  display: grid;
+  gap: 0;
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-clay);
+  overflow: hidden;
+}
+
+.mcp-fact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  padding: 0.9rem 1.1rem;
+}
+
+.mcp-fact + .mcp-fact {
+  border-top: 1px solid var(--oat);
+}
+
+.mcp-fact-key {
+  min-width: 6rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
+.mcp-fact-val {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--black);
+  word-break: break-all;
+}
+
+.mcp-note {
+  max-width: var(--max);
+  margin: 1rem auto 0;
+  font-size: 0.9375rem;
+  color: var(--charcoal);
+}
+
+.mcp-note a {
+  font-weight: 600;
+}
+
+.mcp-note code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  padding: 0.05rem 0.3rem;
+  background: var(--oat-light);
+  border: 1px solid var(--oat);
+  border-radius: 4px;
+}
+
+/* client switcher (Claude Code / Claude Desktop / Cursor / Any) */
+.client-tabs {
+  max-width: var(--max);
+  margin: clamp(1.75rem, 4vw, 2.5rem) auto 0;
+}
+
+.client-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.client-tab {
+  padding: 0.55rem 1.05rem;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    background 0.12s ease;
+}
+
+.client-tab:hover {
+  background: var(--cream);
+}
+
+.client-tab.is-active {
+  color: var(--black);
+  background: var(--matcha-300);
+  box-shadow: var(--shadow-clay);
+}
+
+.client-panel[hidden] {
+  display: none;
+}
+
+.client-panel .mcp-note,
+.client-panel .mcp-facts {
+  margin-top: 1rem;
 }

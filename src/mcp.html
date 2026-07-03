@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeTable MCP — connect your AI tools to your data</title>
+    <meta
+      name="description"
+      content="TypeTable speaks the Model Context Protocol. Connect Claude Desktop, Cursor, or any MCP client with an API token and let your agents read and update your tables — over Streamable HTTP, with your validation and permissions intact."
+    />
+    <link rel="canonical" href="https://typetable.io/mcp.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="TypeTable" />
+    <meta property="og:title" content="TypeTable MCP — connect your AI tools to your data" />
+    <meta
+      property="og:description"
+      content="Connect Claude Desktop, Cursor, or any MCP client and let your agents read and update your TypeTable tables — with your rules intact."
+    />
+    <meta property="og:url" content="https://typetable.io/mcp.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TypeTable MCP — connect your AI tools to your data" />
+    <meta
+      name="twitter:description"
+      content="Connect Claude Desktop, Cursor, or any MCP client and let your agents read and update your TypeTable tables — with your rules intact."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://typetable.io/" },
+          { "@type": "ListItem", "position": 2, "name": "MCP", "item": "https://typetable.io/mcp.html" }
+        ]
+      }
+    </script>
+  </head>
+  <body class="mcp-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a href="index.html" class="logo" aria-label="TypeTable home">
+          <span class="logo-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          TypeTable
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html#how">How it works</a>
+          <a href="index.html#examples">Examples</a>
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              type="button"
+              class="nav-dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              data-dropdown-toggle
+            >
+              Use cases
+              <svg class="nav-caret" viewBox="0 0 10 6" aria-hidden="true">
+                <path
+                  d="M1 1l4 4 4-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" data-dropdown-menu>
+              <a href="use-cases/deal-pipeline.html"
+                >Deal pipeline<span>Sales</span></a
+              >
+              <a href="use-cases/customer-feedback.html"
+                >Customer feedback<span>Product</span></a
+              >
+              <a href="use-cases/expense-log.html"
+                >Expenses &amp; reimbursements<span>Finance</span></a
+              >
+              <a href="use-cases/interview-scorecards.html"
+                >Interview notes<span>Hiring</span></a
+              >
+              <a href="use-cases/campaign-tracker.html"
+                >Content calendar<span>Marketing</span></a
+              >
+              <a href="use-cases/inventory-tracker.html"
+                >Inventory<span>Operations</span></a
+              >
+            </div>
+          </div>
+          <a href="index.html#teams">Teams</a>
+          <a href="index.html#features">Features</a>
+          <a href="mcp.html" aria-current="page">MCP</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+        <div class="header-cta">
+          <a
+            href="https://app.typetable.io"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Get started free</a
+          >
+        </div>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          data-menu-toggle
+        >
+          <span class="sr-only">Menu</span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" hidden data-mobile-nav>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#examples">Examples</a>
+        <span class="mobile-nav-label">Use cases</span>
+        <a class="mobile-nav-sub" href="use-cases/deal-pipeline.html"
+          >Deal pipeline</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/customer-feedback.html"
+          >Customer feedback</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/expense-log.html"
+          >Expenses &amp; reimbursements</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/interview-scorecards.html"
+          >Interview notes</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/campaign-tracker.html"
+          >Content calendar</a
+        >
+        <a class="mobile-nav-sub" href="use-cases/inventory-tracker.html"
+          >Inventory</a
+        >
+        <a href="index.html#teams">Teams</a>
+        <a href="index.html#features">Features</a>
+        <a href="mcp.html" aria-current="page">MCP</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a
+          href="https://app.typetable.io"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Get started free</a
+        >
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <div class="section-head wrap">
+          <p class="label">Model Context Protocol</p>
+          <h1>TypeTable in the AI tools you already use</h1>
+          <p class="lead">
+            TypeTable speaks MCP. Connect Claude Desktop, Cursor, or any
+            MCP&#8209;compatible client with a single API token, and let your
+            agents read and update your tables — your data becomes structured
+            memory any AI can use.
+          </p>
+          <div class="mcp-actions" style="justify-content: center">
+            <a href="#setup" class="btn btn-primary btn-lg">See the setup</a>
+            <a
+              href="https://app.typetable.io"
+              class="btn btn-secondary btn-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Create a token</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Why MCP">
+        <div class="section-head wrap">
+          <p class="label">Why connect over MCP</p>
+          <h2>Real data your agents can trust</h2>
+        </div>
+        <div class="feature-bento wrap">
+          <article class="feature">
+            <h3>Real records, not notes</h3>
+            <p>
+              Agents list tables, query rows, and add or edit records against
+              the same validated data you use in chat — not a scratchpad they
+              forget.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Your rules still apply</h3>
+            <p>
+              Types, required fields, and permissions hold whether a person or
+              an agent writes. A bad value is refused the same way.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Works with your tools</h3>
+            <p>
+              Claude Desktop, Cursor, and any MCP&#8209;compatible client
+              connect over Streamable HTTP with a bearer token.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="setup" class="section">
+        <div class="section-head wrap">
+          <p class="label">Setup</p>
+          <h2>Connect in three steps</h2>
+        </div>
+        <ol class="steps wrap">
+          <li class="step">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Create an API token</h3>
+            <p>
+              In TypeTable, open <strong>Settings → API tokens</strong> and
+              create one. Copy it right away — it's shown once and starts with
+              <code>ath_</code>.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>Add TypeTable to your client</h3>
+            <p>
+              Pick your client below, paste the config, and drop your token into
+              the <code>Authorization</code> header.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>Restart and ask</h3>
+            <p>
+              Restart the client, then ask it to “list my TypeTable tables” or
+              “add a row to …”. It's talking to your data.
+            </p>
+          </li>
+        </ol>
+
+        <div class="client-tabs wrap" data-client-tabs>
+          <div class="client-tablist" role="tablist" aria-label="Choose your client">
+            <button
+              type="button"
+              class="client-tab is-active"
+              role="tab"
+              aria-selected="true"
+              data-client="claude-code"
+            >
+              Claude Code
+            </button>
+            <button
+              type="button"
+              class="client-tab"
+              role="tab"
+              aria-selected="false"
+              data-client="claude-desktop"
+            >
+              Claude Desktop
+            </button>
+            <button
+              type="button"
+              class="client-tab"
+              role="tab"
+              aria-selected="false"
+              data-client="cursor"
+            >
+              Cursor
+            </button>
+            <button
+              type="button"
+              class="client-tab"
+              role="tab"
+              aria-selected="false"
+              data-client="any"
+            >
+              Any client
+            </button>
+          </div>
+
+          <div class="client-panel" data-client-panel="claude-code">
+            <div class="code-block">
+              <div class="code-head">
+                <span class="code-file">.mcp.json</span>
+                <button type="button" class="code-copy" data-copy="#cfg-claude-code">
+                  <span data-copy-label>Copy</span>
+                </button>
+              </div>
+              <pre><code id="cfg-claude-code">{
+  "mcpServers": {
+    "typetable": {
+      "type": "http",
+      "url": "https://app.typetable.io/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ath_YOUR_TOKEN_HERE"
+      }
+    }
+  }
+}</code></pre>
+            </div>
+            <p class="mcp-note">
+              Add <code>.mcp.json</code> to your project root — or run
+              <code>claude mcp add --transport http typetable https://app.typetable.io/api/mcp --header "Authorization: Bearer ath_…"</code>.
+            </p>
+          </div>
+
+          <div class="client-panel" data-client-panel="claude-desktop" hidden>
+            <div class="code-block">
+              <div class="code-head">
+                <span class="code-file">claude_desktop_config.json</span>
+                <button type="button" class="code-copy" data-copy="#cfg-claude-desktop">
+                  <span data-copy-label>Copy</span>
+                </button>
+              </div>
+              <pre><code id="cfg-claude-desktop">{
+  "mcpServers": {
+    "typetable": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://app.typetable.io/api/mcp",
+        "--allow-http",
+        "--transport",
+        "http-only",
+        "--header",
+        "Authorization:${TYPETABLE_MCP_TOKEN}"
+      ],
+      "env": {
+        "TYPETABLE_MCP_TOKEN": "Bearer ath_YOUR_TOKEN_HERE"
+      }
+    }
+  }
+}</code></pre>
+            </div>
+            <p class="mcp-note">
+              Settings → Developer → Edit Config. Fully quit and reopen Claude
+              Desktop — a reload isn't enough.
+            </p>
+          </div>
+
+          <div class="client-panel" data-client-panel="cursor" hidden>
+            <div class="code-block">
+              <div class="code-head">
+                <span class="code-file">.cursor/mcp.json</span>
+                <button type="button" class="code-copy" data-copy="#cfg-cursor">
+                  <span data-copy-label>Copy</span>
+                </button>
+              </div>
+              <pre><code id="cfg-cursor">{
+  "mcpServers": {
+    "typetable": {
+      "url": "https://app.typetable.io/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ath_YOUR_TOKEN_HERE"
+      }
+    }
+  }
+}</code></pre>
+            </div>
+            <p class="mcp-note">
+              Add to <code>~/.cursor/mcp.json</code> (user&#8209;wide) or
+              <code>.cursor/mcp.json</code> in your project, then restart Cursor.
+            </p>
+          </div>
+
+          <div class="client-panel" data-client-panel="any" hidden>
+            <div class="mcp-facts">
+              <div class="mcp-fact">
+                <span class="mcp-fact-key">Endpoint</span>
+                <span class="mcp-fact-val">https://app.typetable.io/api/mcp</span>
+              </div>
+              <div class="mcp-fact">
+                <span class="mcp-fact-key">Transport</span>
+                <span class="mcp-fact-val">Streamable HTTP</span>
+              </div>
+              <div class="mcp-fact">
+                <span class="mcp-fact-key">Auth</span>
+                <span class="mcp-fact-val">Authorization: Bearer ath_…</span>
+              </div>
+            </div>
+            <p class="mcp-note">
+              Any MCP client that speaks Streamable HTTP works — point it at the
+              endpoint and send the Authorization header.
+            </p>
+          </div>
+        </div>
+
+        <p class="mcp-note wrap">
+          Tokens are created and revoked in Settings → API tokens; each is shown
+          once and stored only as a hash. Self&#8209;hosting TypeTable? Point
+          your client at your own deployment's <code>/api/mcp</code> instead.
+        </p>
+      </section>
+
+      <section id="cta" class="cta-band">
+        <div class="cta-inner wrap">
+          <h2>Point your agent at your data</h2>
+          <p class="lead">
+            Create a token, paste the config, and your AI tools can read and
+            update your TypeTable tables in minutes.
+          </p>
+          <a
+            href="https://app.typetable.io"
+            class="btn btn-primary btn-lg"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Get started free</a
+          >
+          <p class="cta-note">Free plan · No credit card required</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-shell wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a
+              href="https://hyperjump.tech/en"
+              class="footer-logo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/hyperjump-logo.png"
+                alt="Hyperjump"
+                width="187"
+                height="32"
+              />
+            </a>
+            <p class="footer-tagline">
+              Engineering excellence, open-source first. We build and
+              commercialize tools that help companies streamline, simplify, and
+              secure modern DevOps.
+            </p>
+          </div>
+
+          <div class="footer-social">
+            <p class="label">Connect</p>
+            <nav class="footer-links" aria-label="Social media">
+              <a
+                href="https://www.linkedin.com/company/hyperjump"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path
+                    d="M16 16V10.14C16 7.26 15.38 5.06 12.02 5.06C10.4 5.06 9.32 5.94 8.88 6.78H8.84V5.32H5.66V16H8.98V10.7C8.98 9.3 9.24 7.96 10.96 7.96C12.66 7.96 12.68 9.54 12.68 10.78V15.98H16V16ZM0.26 5.32H3.58V16H0.26V5.32ZM1.92 0C0.86 0 0 0.86 0 1.92C0 2.98 0.86 3.86 1.92 3.86C2.98 3.86 3.84 2.98 3.84 1.92C3.84 0.86 2.98 0 1.92 0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/hyperjumptech"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path
+                    d="M10 0.416504C4.475 0.416504 0 4.8165 0 10.2432C0 14.5857 2.865 18.2682 6.8375 19.5665C7.3375 19.659 7.52083 19.3548 7.52083 19.094C7.52083 18.8607 7.5125 18.2423 7.50833 17.4232C4.72667 18.0157 4.14 16.1048 4.14 16.1048C3.685 14.9707 3.0275 14.6673 3.0275 14.6673C2.12167 14.0582 3.0975 14.0707 3.0975 14.0707C4.10167 14.139 4.62917 15.0832 4.62917 15.0832C5.52083 16.5857 6.97 16.1515 7.54167 15.9007C7.63167 15.2648 7.88917 14.8323 8.175 14.5865C5.95417 14.3407 3.62 13.4957 3.62 9.73067C3.62 8.65817 4.0075 7.7815 4.64917 7.094C4.53667 6.84567 4.19917 5.8465 4.73667 4.49317C4.73667 4.49317 5.57417 4.22984 7.48667 5.50067C8.28667 5.28234 9.13667 5.174 9.98667 5.169C10.8367 5.174 11.6867 5.28234 12.4867 5.50067C14.3867 4.22984 15.2242 4.49317 15.2242 4.49317C15.7617 5.8465 15.4242 6.84567 15.3242 7.094C15.9617 7.7815 16.3492 8.65817 16.3492 9.73067C16.3492 13.5057 14.0117 14.3365 11.7867 14.5782C12.1367 14.8732 12.4617 15.4757 12.4617 16.3965C12.4617 17.7115 12.4492 18.7682 12.4492 19.0873C12.4492 19.3448 12.6242 19.6523 13.1367 19.554C17.1375 18.264 20 14.579 20 10.2432C20 4.8165 15.5225 0.416504 10 0.416504Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://medium.com/hyperjump-tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Medium"
+              >
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path
+                    d="M14.7233 3.15517L16 1.93384V1.6665H11.5773L8.42533 9.51184L4.83933 1.6665H0.202V1.93384L1.69333 3.72917C1.83867 3.86184 1.91467 4.05584 1.89533 4.25117V11.3065C1.94133 11.5605 1.85867 11.8218 1.68 12.0065L0 14.0425V14.3065H4.76333V14.0392L3.08333 12.0065C2.99341 11.9156 2.92574 11.8051 2.88561 11.6836C2.84548 11.5622 2.83397 11.4331 2.852 11.3065V5.20384L7.03333 14.3098H7.51933L11.1147 5.20384V12.4578C11.1147 12.6492 11.1147 12.6885 10.9893 12.8138L9.696 14.0652V14.3332H15.9707V14.0658L14.724 12.8452C14.67 12.8045 14.6282 12.7498 14.603 12.6871C14.5779 12.6243 14.5704 12.5559 14.5813 12.4892V3.51117C14.5702 3.44452 14.5775 3.37608 14.6025 3.31331C14.6276 3.25054 14.6694 3.19584 14.7233 3.15517Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://hyperjump.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Substack"
+              >
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M3 3h18v3H3V3zm0 5h18v3H3V8zm0 5h18v8l-9-4-9 4v-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </nav>
+          </div>
+
+          <div class="footer-contact">
+            <p class="label">Headquarters</p>
+            <address class="footer-address">
+              <strong>Sinar Mas MSIG Tower (34th floor)</strong>
+              Jl. Jenderal Sudirman Kav. 21<br />
+              Jakarta Selatan 12920<br />
+              Indonesia
+            </address>
+            <p class="footer-meta">
+              <a href="mailto:solution@hyperjump.tech"
+                >solution@hyperjump.tech</a
+              >
+            </p>
+            <p class="footer-meta">D&amp;B D-U-N-S: 65-975-4901</p>
+            <p class="footer-meta">
+              <a
+                href="https://maps.app.goo.gl/Dew762WwKLruRYGC9"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open in Google Maps</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>Copyright © 2026 PT Artha Rajamas Mandiri. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -73,6 +73,7 @@
           </div>
           <a href="#teams">Teams</a>
           <a href="#features">Features</a>
+          <a href="mcp.html">MCP</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
         </nav>
@@ -121,6 +122,7 @@
         >
         <a href="#teams">Teams</a>
         <a href="#features">Features</a>
+        <a href="mcp.html">MCP</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a
@@ -758,6 +760,140 @@
               rebuilding.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section id="mcp" class="section">
+        <div class="section-head wrap">
+          <p class="label">Model Context Protocol</p>
+          <h2>Bring your tables into the AI tools you already use</h2>
+          <p class="lead">
+            TypeTable speaks MCP. Connect Claude Code, Cursor, or any
+            MCP&#8209;compatible client and let your agents read and update your
+            tables — your data becomes structured memory any AI can use.
+          </p>
+        </div>
+        <div class="mcp-split wrap">
+          <div class="mcp-copy">
+            <ul class="mcp-points">
+              <li>
+                <strong>Real records, not notes.</strong> Agents list tables,
+                query rows, and add or edit records — against the same validated
+                data you use in chat.
+              </li>
+              <li>
+                <strong>Your rules still apply.</strong> Types, required fields,
+                and permissions hold whether a person or an agent writes.
+              </li>
+              <li>
+                <strong>One secure token.</strong> Create an API token in
+                Settings and connect over Streamable HTTP. Revoke it any time.
+              </li>
+            </ul>
+            <div class="mcp-actions">
+              <a href="mcp.html" class="btn btn-primary">Read the MCP guide</a>
+              <a
+                href="https://app.typetable.io"
+                class="btn btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Create a token</a
+              >
+            </div>
+          </div>
+          <div class="mcp-code">
+            <div class="client-tabs" data-client-tabs>
+              <div class="client-tablist" role="tablist" aria-label="Choose your client">
+                <button
+                  type="button"
+                  class="client-tab is-active"
+                  role="tab"
+                  aria-selected="true"
+                  data-client="claude-code"
+                >
+                  Claude Code
+                </button>
+                <button
+                  type="button"
+                  class="client-tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-client="cursor"
+                >
+                  Cursor
+                </button>
+                <button
+                  type="button"
+                  class="client-tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-client="any"
+                >
+                  Any client
+                </button>
+              </div>
+
+              <div class="client-panel" data-client-panel="claude-code">
+                <div class="code-block">
+                  <div class="code-head">
+                    <span class="code-file">.mcp.json</span>
+                    <button type="button" class="code-copy" data-copy="#cfg-home-claude-code">
+                      <span data-copy-label>Copy</span>
+                    </button>
+                  </div>
+                  <pre><code id="cfg-home-claude-code">{
+  "mcpServers": {
+    "typetable": {
+      "type": "http",
+      "url": "https://app.typetable.io/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ath_YOUR_TOKEN_HERE"
+      }
+    }
+  }
+}</code></pre>
+                </div>
+              </div>
+
+              <div class="client-panel" data-client-panel="cursor" hidden>
+                <div class="code-block">
+                  <div class="code-head">
+                    <span class="code-file">.cursor/mcp.json</span>
+                    <button type="button" class="code-copy" data-copy="#cfg-home-cursor">
+                      <span data-copy-label>Copy</span>
+                    </button>
+                  </div>
+                  <pre><code id="cfg-home-cursor">{
+  "mcpServers": {
+    "typetable": {
+      "url": "https://app.typetable.io/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ath_YOUR_TOKEN_HERE"
+      }
+    }
+  }
+}</code></pre>
+                </div>
+              </div>
+
+              <div class="client-panel" data-client-panel="any" hidden>
+                <div class="mcp-facts">
+                  <div class="mcp-fact">
+                    <span class="mcp-fact-key">Endpoint</span>
+                    <span class="mcp-fact-val">https://app.typetable.io/api/mcp</span>
+                  </div>
+                  <div class="mcp-fact">
+                    <span class="mcp-fact-key">Transport</span>
+                    <span class="mcp-fact-val">Streamable HTTP</span>
+                  </div>
+                  <div class="mcp-fact">
+                    <span class="mcp-fact-key">Auth</span>
+                    <span class="mcp-fact-val">Authorization: Bearer ath_…</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
