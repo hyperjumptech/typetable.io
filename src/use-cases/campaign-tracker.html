@@ -3,8 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TypeTable — Campaign tracker</title>
-    <meta name="description" content="See how a marketing team tracks campaigns in TypeTable: one view across channels with validated channels and budgets, updated in plain language." />
+    <title>Content calendar — plan every post by chatting · TypeTable</title>
+    <meta
+      name="description"
+      content="Content plans spread across three docs and an out-of-date calendar? Describe a content calendar once and TypeTable builds it — the whole team adds and updates posts in plain language, and everyone sees what's shipping when. No spreadsheets, no setup."
+    />
+    <link rel="canonical" href="https://typetable.io/use-cases/campaign-tracker.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="TypeTable" />
+    <meta property="og:title" content="Content calendar — plan every post by chatting" />
+    <meta
+      property="og:description"
+      content="Describe a content calendar once and TypeTable builds it. The whole team adds and updates posts in plain language; everyone sees what's shipping when."
+    />
+    <meta property="og:url" content="https://typetable.io/use-cases/campaign-tracker.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Content calendar — plan every post by chatting" />
+    <meta
+      name="twitter:description"
+      content="Describe a content calendar once and TypeTable builds it. The whole team adds and updates posts in plain language; everyone sees what's shipping when."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,6 +30,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://typetable.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://typetable.io/use-cases/" },
+          { "@type": "ListItem", "position": 3, "name": "Content calendar", "item": "https://typetable.io/use-cases/campaign-tracker.html" }
+        ]
+      }
+    </script>
   </head>
   <body class="page-use-cases">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -49,22 +78,22 @@
             </button>
             <div class="nav-dropdown-menu" data-dropdown-menu>
               <a href="deal-pipeline.html"
-                >Deal pipeline<span>Sales &amp; CRM</span></a
+                >Deal pipeline<span>Sales</span></a
               >
-              <a href="bug-triage.html"
-                >Bug &amp; issue triage<span>Customer support</span></a
+              <a href="customer-feedback.html"
+                >Customer feedback<span>Product</span></a
               >
               <a href="expense-log.html"
-                >Expense &amp; reimbursement log<span>Finance</span></a
+                >Expenses &amp; reimbursements<span>Finance</span></a
               >
               <a href="interview-scorecards.html"
-                >Interview scorecards<span>People &amp; HR</span></a
-              >
-              <a href="maintenance-log.html"
-                >Equipment maintenance log<span>Field operations</span></a
+                >Interview notes<span>Hiring</span></a
               >
               <a href="campaign-tracker.html" aria-current="page"
-                >Campaign tracker<span>Marketing</span></a
+                >Content calendar<span>Marketing</span></a
+              >
+              <a href="inventory-tracker.html"
+                >Inventory<span>Operations</span></a
               >
             </div>
           </div>
@@ -101,21 +130,19 @@
         <a class="mobile-nav-sub" href="deal-pipeline.html"
           >Deal pipeline</a
         >
-        <a class="mobile-nav-sub" href="bug-triage.html"
-          >Bug &amp; issue triage</a
+        <a class="mobile-nav-sub" href="customer-feedback.html"
+          >Customer feedback</a
         >
         <a class="mobile-nav-sub" href="expense-log.html"
-          >Expense &amp; reimbursement log</a
+          >Expenses &amp; reimbursements</a
         >
         <a class="mobile-nav-sub" href="interview-scorecards.html"
-          >Interview scorecards</a
-        >
-        <a class="mobile-nav-sub" href="maintenance-log.html"
-          >Equipment maintenance log</a
+          >Interview notes</a
         >
         <a class="mobile-nav-sub" href="campaign-tracker.html" aria-current="page"
-          >Campaign tracker</a
+          >Content calendar</a
         >
+        <a class="mobile-nav-sub" href="inventory-tracker.html">Inventory</a>
         <a href="../index.html#teams">Teams</a>
         <a href="../index.html#features">Features</a>
         <a href="../index.html#pricing">Pricing</a>
@@ -134,199 +161,399 @@
       <section class="section uc-detail">
         <div class="section-head wrap">
           <p class="label">For Marketing</p>
-          <h2>Campaign tracker</h2>
-          <p class="lead">Campaigns ran across channels with no single view. TypeTable tracks every campaign, validates the channel, and keeps budgets and status together.</p>
+          <h1>Content calendar</h1>
+          <p class="lead">
+            Marketing teams lose track of what's going out, when, and who owns
+            it — the plan is scattered across docs and the calendar is always a
+            step behind. Here's how a team builds one shared calendar just by
+            describing it, and keeps it current in plain language.
+          </p>
           <ul class="uc-outcome uc-outcome--center">
-              <li>One source of truth</li>
-              <li>Channel validated</li>
-              <li>Budget in USD</li>
+            <li>Built by chatting</li>
+            <li>The whole team can add</li>
+            <li>Everyone sees what's shipping</li>
           </ul>
         </div>
 
-        <div class="uc-detail-body wrap">
-            <div class="use-case-chats">
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--create"
-                  >Create table</span
-                >
-                <div
-                  class="chat chat--creator"
-                  aria-label="Creator chat: campaign tracker"
-                >
-                  <div class="chat-bar">
-                    <strong>Marketing lead</strong>
-                    <span>Creates the tracker</span>
+        <div class="uc-story wrap">
+          <div class="uc-story-row uc-story-row--pom">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">01</span> The problem
+              </p>
+              <h3>The calendar is always out of date</h3>
+              <p>
+                The plan lives in three different docs. One has the blog ideas,
+                one has the email schedule, and the shared calendar hasn't been
+                touched in weeks. Nobody's sure what's actually shipping this
+                week.
+              </p>
+              <p>
+                The team doesn't want another tool to set up. They just want one
+                list everyone can <strong>trust</strong>.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat" aria-label="Describing the problem">
+                <div class="chat-bar">
+                  <strong>Marketing lead</strong>
+                  <span>Runs content</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Our content plan is spread across three docs and a
+                      calendar nobody keeps current. We never know what's going
+                      out when.
+                    </p>
                   </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        We run campaigns across channels with no single view.
-                        Track campaign, channel, launch date, budget, owner, and
-                        status.
-                      </p>
+                  <div class="chat-msg chat-msg--bot">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <p>
+                      Let's give the team one shared calendar. Tell me what you
+                      track on a post and I'll build it.
+                    </p>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--top uc-story-row--ube">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">02</span> Just describe it
+              </p>
+              <h3>Say it in a sentence</h3>
+              <p>
+                You type what a post looks like in plain English. TypeTable
+                proposes the table — the fields, the types, and the rules — and
+                waits for you to approve.
+              </p>
+              <p>
+                The channel becomes a fixed list, and every new post starts at
+                Idea, so nothing slips in half-defined.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat chat--creator" aria-label="Creating the calendar">
+                <div class="chat-bar">
+                  <strong>Marketing lead</strong>
+                  <span>Creates the calendar</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Track title, channel, owner, publish date, and status for
+                      every post.
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--schema">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <strong>Content calendar</strong>
+                    <p>Here's the table I'd create:</p>
+                    <ul class="chat-pills">
+                      <li>Title</li>
+                      <li>Channel</li>
+                      <li>Owner</li>
+                      <li>Publish date</li>
+                      <li>Status</li>
+                    </ul>
+                    <p class="chat-rule">
+                      Channel from a fixed list · Status starts at Idea
+                    </p>
+                    <div class="chat-actions">
+                      <span class="chat-chip chat-chip--primary">Approve</span>
+                      <span class="chat-chip">Edit fields</span>
                     </div>
-                    <div class="chat-msg chat-msg--bot chat-msg--schema">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <strong>Campaign tracker</strong>
-                      <p>Here's the table I'd create:</p>
-                      <ul class="chat-pills">
-                        <li>Campaign</li>
-                        <li>Channel</li>
-                        <li>Launch date</li>
-                        <li>Budget</li>
-                        <li>Owner</li>
-                        <li>Status</li>
-                      </ul>
-                      <p class="chat-rule">
-                        Channel → Email / Social / Paid / Event · Budget in USD
-                      </p>
-                      <div class="chat-actions">
-                        <span class="chat-chip chat-chip--primary">Approve</span>
-                        <span class="chat-chip">Edit fields</span>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--matcha">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">03</span> It's ready
+              </p>
+              <h3>Live in seconds, not a sprint</h3>
+              <p>
+                You hit approve and the calendar is real — a proper, typed table
+                you can share with the whole team. No schema to design, no admin
+                panel to wire up.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="tt-result">
+                <div class="tt-result-head">
+                  <span class="tt-result-title">Content calendar</span>
+                  <span class="tt-lock tt-lock--live">Live</span>
+                </div>
+                <div class="tt-scroll">
+                  <table class="tt-table">
+                    <thead>
+                      <tr>
+                        <th><span class="tt-col">title</span><span class="tt-type">text</span></th>
+                        <th><span class="tt-col">channel</span><span class="tt-type tt-type--enum">enum</span></th>
+                        <th><span class="tt-col">publish_date</span><span class="tt-type tt-type--date">date</span></th>
+                        <th><span class="tt-col">status</span><span class="tt-type tt-type--enum">enum</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>How teams ship faster</td>
+                        <td><span class="tt-badge tt-badge--cool">Blog</span></td>
+                        <td class="tt-mono">Jul 9</td>
+                        <td><span class="tt-badge tt-badge--warn">Drafting</span></td>
+                      </tr>
+                      <tr>
+                        <td>Summer product update</td>
+                        <td><span class="tt-badge tt-badge--enum">Email</span></td>
+                        <td class="tt-mono">Jul 15</td>
+                        <td><span class="tt-badge tt-badge--good">Scheduled</span></td>
+                      </tr>
+                      <tr>
+                        <td>Behind the roadmap</td>
+                        <td><span class="tt-badge tt-badge--number">Webinar</span></td>
+                        <td class="tt-mono">Jun 27</td>
+                        <td><span class="tt-badge tt-badge--good">Published</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tt-result-foot">
+                  Rules enforced on every insert
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--wide">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">04</span> The team just types
+              </p>
+              <h3>The team adds posts by talking</h3>
+              <p>
+                No forms, no training. The marketing lead sets it up; writers
+                just say what they're planning. Have a whole batch? Paste the
+                lot and TypeTable adds every row at once.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="use-case-chats">
+                <div class="use-case-chat-col">
+                  <span class="use-case-flow-badge use-case-flow-badge--create"
+                    >Set it up once</span
+                  >
+                  <div class="chat chat--creator" aria-label="Setting it up">
+                    <div class="chat-bar">
+                      <strong>Marketing lead</strong>
+                      <span>Runs content</span>
+                    </div>
+                    <div class="chat-thread">
+                      <div class="chat-msg chat-msg--user">
+                        <span class="chat-msg-label">You</span>
+                        <p>
+                          Add a blog post "How teams ship faster", publishing
+                          Jul 9, drafting now.
+                        </p>
+                      </div>
+                      <div class="chat-msg chat-msg--success">
+                        <span class="chat-msg-label">TypeTable</span>
+                        <p>Saved — Blog, Jul 9, Drafting.</p>
                       </div>
                     </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Approve</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Created. <strong>Campaign tracker</strong> is live.</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Summer launch email, $5k budget, I own it, going out July
-                        1.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Saved — Summer launch, Email, $5,000, launching Jul 1,
-                        Planned.
-                      </p>
-                    </div>
+                    <div class="chat-input-fake" aria-hidden="true"></div>
                   </div>
-                  <div class="chat-input-fake" aria-hidden="true">
-                    Describe or record…
+                </div>
+                <div class="use-case-chat-col">
+                  <span class="use-case-flow-badge use-case-flow-badge--record"
+                    >Anyone adds records</span
+                  >
+                  <div
+                    class="chat chat--contributor"
+                    aria-label="Pasting a batch of posts"
+                  >
+                    <div class="chat-bar">
+                      <strong>Writer</strong>
+                      <span>Adds posts</span>
+                    </div>
+                    <div class="chat-thread">
+                      <div class="chat-msg chat-msg--user">
+                        <span class="chat-msg-label">You</span>
+                        <p>
+                          Here are 8 posts from our planning doc — title,
+                          channel, and publish date for each. Add them all.
+                        </p>
+                      </div>
+                      <div class="chat-msg chat-msg--success">
+                        <span class="chat-msg-label">TypeTable</span>
+                        <p>
+                          Added 8 rows. Each one started at
+                          <strong>Idea</strong> — just set the dates as they
+                          firm up.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="chat-input-fake" aria-hidden="true"></div>
                   </div>
                 </div>
               </div>
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--record"
-                  >Enter record</span
-                >
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--top uc-story-row--slushie">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">05</span> Ask a question, get an answer
+              </p>
+              <h3>"What's scheduled this month?"</h3>
+              <p>
+                No filtering, no pivot tables. You ask in plain language and get
+                the number back instantly — plus a chart you can drop straight
+                into the planning meeting.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat" aria-label="Asking what's scheduled">
+                <div class="chat-bar">
+                  <strong>Marketing lead</strong>
+                  <span>Asks a question</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>What's scheduled this month?</p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--stat">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <div class="chat-stat">
+                      <span class="chat-stat-num">12</span>
+                      <span class="chat-stat-unit">scheduled</span>
+                    </div>
+                    <p class="chat-stat-caption">
+                      going out this month
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>Break it down by channel as a chart</p>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+              <div class="tt-result" style="margin-top: 0.85rem">
+                <div class="tt-result-head">
+                  <span class="tt-result-title">Posts by channel</span>
+                  <span class="tt-result-meta">this month</span>
+                </div>
                 <div
-                  class="chat chat--contributor"
-                  aria-label="Contributor chat: campaign tracker"
+                  class="tt-chart"
+                  role="img"
+                  aria-label="Posts by channel: Social 12, Blog 8, Email 6, Webinar 3"
                 >
-                  <div class="chat-bar">
-                    <strong>Campaign manager</strong>
-                    <span>Adds a campaign</span>
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Social</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar tt-chart-bar--cool" style="--val: 100%"></span
+                    ></span>
+                    <span class="tt-chart-val">12</span>
                   </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Add a campaign</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>What's it called and on which channel?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Q3 webinar series, it's an Event</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>What's the budget and who owns it?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>$12k, owned by Nadia, live in August</p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Saved — Q3 webinar series, Event, $12,000, Nadia, Planned.
-                      </p>
-                    </div>
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Blog</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar" style="--val: 67%"></span
+                    ></span>
+                    <span class="tt-chart-val">8</span>
                   </div>
-                  <div class="chat-input-fake" aria-hidden="true">
-                    Record in plain language…
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Email</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar tt-chart-bar--number" style="--val: 50%"></span
+                    ></span>
+                    <span class="tt-chart-val">6</span>
+                  </div>
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Webinar</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar tt-chart-bar--enum" style="--val: 25%"></span
+                    ></span>
+                    <span class="tt-chart-val">3</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="tt-result">
-              <div class="tt-result-head">
-                <span class="tt-result-title">Campaign tracker</span>
-                <span class="tt-result-meta">9 records · updated 3h ago</span>
+          </div>
+
+          <div class="uc-story-row uc-story-row--matcha">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">06</span> Keep it trustworthy
+              </p>
+              <h3>Share it so the whole team keeps it current</h3>
+              <p>
+                Share the calendar with the whole marketing team and everyone
+                keeps their own posts up to date — no more chasing people for
+                status or forwarding the latest version of a doc.
+              </p>
+              <p class="uc-story-note">Set who can edit and who can just look.</p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat" aria-label="Sharing the calendar">
+                <div class="chat-bar">
+                  <strong>Marketing lead</strong>
+                  <span>Shares the calendar</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>Share this with the marketing team, everyone can edit.</p>
+                  </div>
+                  <div class="chat-msg chat-msg--success">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <p>
+                      Shared with Marketing. Everyone can add and update posts in
+                      plain language.
+                    </p>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
               </div>
-              <div class="tt-scroll">
-                <table class="tt-table">
-                  <thead>
-                    <tr>
-                      <th><span class="tt-col">campaign</span><span class="tt-type">text</span></th>
-                      <th><span class="tt-col">channel</span><span class="tt-type tt-type--enum">enum</span></th>
-                      <th><span class="tt-col">launch_date</span><span class="tt-type tt-type--date">date</span></th>
-                      <th><span class="tt-col">budget</span><span class="tt-type tt-type--number">number</span></th>
-                      <th><span class="tt-col">owner</span><span class="tt-type">text</span></th>
-                      <th><span class="tt-col">status</span><span class="tt-type tt-type--enum">enum</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Summer launch</td>
-                      <td><span class="tt-badge">Email</span></td>
-                      <td class="tt-mono">Jul 1</td>
-                      <td class="tt-mono">$5,000</td>
-                      <td>You</td>
-                      <td><span class="tt-badge tt-badge--warn">Planned</span></td>
-                    </tr>
-                    <tr>
-                      <td>Q3 webinar series</td>
-                      <td><span class="tt-badge">Event</span></td>
-                      <td class="tt-mono">Aug 5</td>
-                      <td class="tt-mono">$12,000</td>
-                      <td>Nadia</td>
-                      <td><span class="tt-badge tt-badge--warn">Planned</span></td>
-                    </tr>
-                    <tr>
-                      <td>Brand refresh</td>
-                      <td><span class="tt-badge">Paid</span></td>
-                      <td class="tt-mono">Jun 15</td>
-                      <td class="tt-mono">$30,000</td>
-                      <td>Dana</td>
-                      <td><span class="tt-badge tt-badge--good">Live</span></td>
-                    </tr>
-                    <tr>
-                      <td>Dev newsletter</td>
-                      <td><span class="tt-badge">Social</span></td>
-                      <td class="tt-mono">Jun 01</td>
-                      <td class="tt-mono">$0</td>
-                      <td>Leo</td>
-                      <td><span class="tt-badge tt-badge--good">Live</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="tt-result-foot">
-                Showing 4 of 9 · channel from Email / Social / Paid / Event
+              <div class="tt-result" style="margin-top: 0.85rem">
+                <div class="tt-result-head">
+                  <span class="tt-result-title">Content calendar</span>
+                  <span class="tt-result-meta">36 posts</span>
+                </div>
+                <div class="tt-share">
+                  <div class="tt-avatars">
+                    <span class="tt-avatar">SR</span>
+                    <span class="tt-avatar">TN</span>
+                    <span class="tt-avatar">DP</span>
+                    <span class="tt-avatar">LM</span>
+                    <span class="tt-avatar tt-avatar--more">+5</span>
+                  </div>
+                  <span class="tt-perm tt-perm--edit">Can edit</span>
+                  <span class="tt-share-note">Shared with Marketing</span>
+                </div>
               </div>
             </div>
+          </div>
         </div>
 
         <div class="uc-more">
           <p class="label">More use cases</p>
           <nav class="uc-nav" aria-label="Other use cases">
             <a href="deal-pipeline.html">Deal pipeline</a>
-            <a href="bug-triage.html">Bug &amp; issue triage</a>
-            <a href="expense-log.html">Expense &amp; reimbursement log</a>
-            <a href="interview-scorecards.html">Interview scorecards</a>
-            <a href="maintenance-log.html">Equipment maintenance log</a>
+            <a href="customer-feedback.html">Customer feedback</a>
+            <a href="expense-log.html">Expenses &amp; reimbursements</a>
+            <a href="interview-scorecards.html">Interview notes</a>
+            <a href="inventory-tracker.html">Inventory</a>
           </nav>
         </div>
 

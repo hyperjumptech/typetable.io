@@ -3,8 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TypeTable — Expense &amp; reimbursement log</title>
-    <meta name="description" content="See how a finance team logs expenses and reimbursements in TypeTable: validated amounts, consistent categories, and receipt tracking, all in plain language." />
+    <title>Expense &amp; reimbursement tracker — no more lost receipts · TypeTable</title>
+    <meta
+      name="description"
+      content="Reimbursements lost in inboxes? Describe an expense log once and TypeTable builds it — the team submits in plain language, bad entries are refused, and you total spend by category in a sentence. No spreadsheets, no setup."
+    />
+    <link rel="canonical" href="https://typetable.io/use-cases/expense-log.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="TypeTable" />
+    <meta property="og:title" content="Expense &amp; reimbursement tracker — no more lost receipts" />
+    <meta
+      property="og:description"
+      content="Describe an expense log once and TypeTable builds it. The team submits in plain language; bad entries are refused; totals come back in a sentence."
+    />
+    <meta property="og:url" content="https://typetable.io/use-cases/expense-log.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Expense &amp; reimbursement tracker — no more lost receipts" />
+    <meta
+      name="twitter:description"
+      content="Describe an expense log once and TypeTable builds it. The team submits in plain language; bad entries are refused; totals come back in a sentence."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,6 +30,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://typetable.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://typetable.io/use-cases/" },
+          { "@type": "ListItem", "position": 3, "name": "Expenses & reimbursements", "item": "https://typetable.io/use-cases/expense-log.html" }
+        ]
+      }
+    </script>
   </head>
   <body class="page-use-cases">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -49,22 +78,22 @@
             </button>
             <div class="nav-dropdown-menu" data-dropdown-menu>
               <a href="deal-pipeline.html"
-                >Deal pipeline<span>Sales &amp; CRM</span></a
+                >Deal pipeline<span>Sales</span></a
               >
-              <a href="bug-triage.html"
-                >Bug &amp; issue triage<span>Customer support</span></a
+              <a href="customer-feedback.html"
+                >Customer feedback<span>Product</span></a
               >
               <a href="expense-log.html" aria-current="page"
-                >Expense &amp; reimbursement log<span>Finance</span></a
+                >Expenses &amp; reimbursements<span>Finance</span></a
               >
               <a href="interview-scorecards.html"
-                >Interview scorecards<span>People &amp; HR</span></a
-              >
-              <a href="maintenance-log.html"
-                >Equipment maintenance log<span>Field operations</span></a
+                >Interview notes<span>Hiring</span></a
               >
               <a href="campaign-tracker.html"
-                >Campaign tracker<span>Marketing</span></a
+                >Content calendar<span>Marketing</span></a
+              >
+              <a href="inventory-tracker.html"
+                >Inventory<span>Operations</span></a
               >
             </div>
           </div>
@@ -101,21 +130,19 @@
         <a class="mobile-nav-sub" href="deal-pipeline.html"
           >Deal pipeline</a
         >
-        <a class="mobile-nav-sub" href="bug-triage.html"
-          >Bug &amp; issue triage</a
+        <a class="mobile-nav-sub" href="customer-feedback.html"
+          >Customer feedback</a
         >
         <a class="mobile-nav-sub" href="expense-log.html" aria-current="page"
-          >Expense &amp; reimbursement log</a
+          >Expenses &amp; reimbursements</a
         >
         <a class="mobile-nav-sub" href="interview-scorecards.html"
-          >Interview scorecards</a
-        >
-        <a class="mobile-nav-sub" href="maintenance-log.html"
-          >Equipment maintenance log</a
+          >Interview notes</a
         >
         <a class="mobile-nav-sub" href="campaign-tracker.html"
-          >Campaign tracker</a
+          >Content calendar</a
         >
+        <a class="mobile-nav-sub" href="inventory-tracker.html">Inventory</a>
         <a href="../index.html#teams">Teams</a>
         <a href="../index.html#features">Features</a>
         <a href="../index.html#pricing">Pricing</a>
@@ -134,198 +161,392 @@
       <section class="section uc-detail">
         <div class="section-head wrap">
           <p class="label">For Finance</p>
-          <h2>Expense &amp; reimbursement log</h2>
-          <p class="lead">Reimbursements lived in inboxes and got lost. TypeTable validates amounts, keeps categories consistent, and tracks receipts and status in one place.</p>
+          <h1>Expenses &amp; reimbursements</h1>
+          <p class="lead">
+            Reimbursements get lost in inboxes and nobody's sure who's owed
+            what. Here's how a team turns expenses into one shared log just by
+            describing it — where a bad entry simply can't get in.
+          </p>
           <ul class="uc-outcome uc-outcome--center">
-              <li>Amounts validated</li>
-              <li>No future dates</li>
-              <li>Receipt tracked</li>
+            <li>Built by chatting</li>
+            <li>Bad entries refused</li>
+            <li>Totals in a sentence</li>
           </ul>
         </div>
 
-        <div class="uc-detail-body wrap">
-            <div class="use-case-chats">
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--create"
-                  >Create table</span
-                >
-                <div
-                  class="chat chat--creator"
-                  aria-label="Creator chat: expense and reimbursement log"
-                >
-                  <div class="chat-bar">
-                    <strong>Finance manager</strong>
-                    <span>Creates the log</span>
+        <div class="uc-story wrap">
+          <div class="uc-story-row uc-story-row--pom">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">01</span> The problem
+              </p>
+              <h3>Reimbursements get lost in inboxes</h3>
+              <p>
+                Receipts arrive as forwarded emails, chat screenshots, and
+                photos. Some get paid twice, some never at all. By month end the
+                team is scrolling three inboxes trying to remember who is still
+                owed.
+              </p>
+              <p>
+                Nobody wants an expense platform. You just want the list to be
+                <strong>right</strong>.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat" aria-label="Describing the problem">
+                <div class="chat-bar">
+                  <strong>Ops lead</strong>
+                  <span>Describes the problem</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Expenses come in from everywhere and half of them get
+                      lost. I never know who still needs reimbursing.
+                    </p>
                   </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Staff submit reimbursements over email and we lose track.
-                        Log the submitter, amount, category, date, whether a
-                        receipt is attached, and status.
-                      </p>
+                  <div class="chat-msg chat-msg--bot">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <p>
+                      Let's give the team one shared expense log. Tell me what
+                      you track on an expense and I'll build it.
+                    </p>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--top uc-story-row--ube">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">02</span> Just describe it
+              </p>
+              <h3>Say it in a sentence</h3>
+              <p>
+                You type what an expense looks like in plain English. TypeTable
+                proposes the table — the fields, the types, and the rules — and
+                waits for you to approve.
+              </p>
+              <p>
+                The category becomes a fixed list, so a random "Miscellaneous"
+                can never creep in again.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat chat--creator" aria-label="Creating the expense log">
+                <div class="chat-bar">
+                  <strong>Ops lead</strong>
+                  <span>Creates the log</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Track person, amount, category, status, whether there's a
+                      receipt, and the date.
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--schema">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <strong>Expense log</strong>
+                    <p>Here's the table I'd create:</p>
+                    <ul class="chat-pills">
+                      <li>Person</li>
+                      <li>Amount</li>
+                      <li>Category</li>
+                      <li>Status</li>
+                      <li>Receipt</li>
+                      <li>Date</li>
+                    </ul>
+                    <p class="chat-rule">
+                      Amount can't be negative · Category from a fixed list ·
+                      Date can't be in the future
+                    </p>
+                    <div class="chat-actions">
+                      <span class="chat-chip chat-chip--primary">Approve</span>
+                      <span class="chat-chip">Edit fields</span>
                     </div>
-                    <div class="chat-msg chat-msg--bot chat-msg--schema">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <strong>Expense &amp; reimbursement log</strong>
-                      <p>Here's the table I'd create:</p>
-                      <ul class="chat-pills">
-                        <li>Submitter</li>
-                        <li>Amount</li>
-                        <li>Category</li>
-                        <li>Date</li>
-                        <li>Receipt</li>
-                        <li>Status</li>
-                      </ul>
-                      <p class="chat-rule">
-                        Amount &gt; 0 (USD) · Category from approved list · Date
-                        not in future
-                      </p>
-                      <div class="chat-actions">
-                        <span class="chat-chip chat-chip--primary">Approve</span>
-                        <span class="chat-chip">Edit fields</span>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--matcha">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">03</span> It's ready
+              </p>
+              <h3>Live in seconds, not a sprint</h3>
+              <p>
+                You hit approve and the expense log is real — a proper, typed
+                table you can share with the whole team. No schema to design, no
+                admin panel to wire up.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="tt-result">
+                <div class="tt-result-head">
+                  <span class="tt-result-title">Expense log</span>
+                  <span class="tt-lock tt-lock--live">Live</span>
+                </div>
+                <div class="tt-scroll">
+                  <table class="tt-table">
+                    <thead>
+                      <tr>
+                        <th><span class="tt-col">amount</span><span class="tt-type tt-type--number">number</span></th>
+                        <th><span class="tt-col">category</span><span class="tt-type tt-type--enum">enum</span></th>
+                        <th><span class="tt-col">status</span><span class="tt-type tt-type--enum">enum</span></th>
+                        <th><span class="tt-col">date</span><span class="tt-type tt-type--date">date</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tt-mono">$240</td>
+                        <td><span class="tt-badge tt-badge--cool">Travel</span></td>
+                        <td><span class="tt-badge tt-badge--warn">Submitted</span></td>
+                        <td class="tt-mono">Jul 1</td>
+                      </tr>
+                      <tr>
+                        <td class="tt-mono">$89</td>
+                        <td><span class="tt-badge tt-badge--cool">Software</span></td>
+                        <td><span class="tt-badge tt-badge--good">Reimbursed</span></td>
+                        <td class="tt-mono">Jun 24</td>
+                      </tr>
+                      <tr>
+                        <td class="tt-mono">$32</td>
+                        <td><span class="tt-badge tt-badge--cool">Meals</span></td>
+                        <td><span class="tt-badge tt-badge--good">Approved</span></td>
+                        <td class="tt-mono">Jun 30</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tt-result-foot">
+                  Rules enforced on every insert
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--wide">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">04</span> The team just types
+              </p>
+              <h3>The team submits by talking</h3>
+              <p>
+                No forms, no training. You set it up; teammates just say what
+                they spent. TypeTable applies the rules and saves it clean, with
+                the receipt flag set for them.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="use-case-chats">
+                <div class="use-case-chat-col">
+                  <span class="use-case-flow-badge use-case-flow-badge--create"
+                    >Set it up once</span
+                  >
+                  <div class="chat chat--creator" aria-label="Setting it up">
+                    <div class="chat-bar">
+                      <strong>Ops lead</strong>
+                      <span>Sets it up</span>
+                    </div>
+                    <div class="chat-thread">
+                      <div class="chat-msg chat-msg--user">
+                        <span class="chat-msg-label">You</span>
+                        <p>
+                          New expenses start as Submitted until I approve them.
+                        </p>
+                      </div>
+                      <div class="chat-msg chat-msg--success">
+                        <span class="chat-msg-label">TypeTable</span>
+                        <p>Done — status defaults to Submitted on every new entry.</p>
                       </div>
                     </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Approve</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Created. <strong>Expense &amp; reimbursement log</strong>
-                        is live.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>I spent $54 on a client lunch yesterday, receipt attached.</p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Saved — You, $54.00, Meals, receipt attached, Pending.</p>
-                    </div>
+                    <div class="chat-input-fake" aria-hidden="true"></div>
                   </div>
-                  <div class="chat-input-fake" aria-hidden="true">
-                    Describe or record…
+                </div>
+                <div class="use-case-chat-col">
+                  <span class="use-case-flow-badge use-case-flow-badge--record"
+                    >Anyone adds records</span
+                  >
+                  <div
+                    class="chat chat--contributor"
+                    aria-label="A teammate submits an expense"
+                  >
+                    <div class="chat-bar">
+                      <strong>Teammate</strong>
+                      <span>Submits an expense</span>
+                    </div>
+                    <div class="chat-thread">
+                      <div class="chat-msg chat-msg--user">
+                        <span class="chat-msg-label">You</span>
+                        <p>
+                          Add $240 flight to Jakarta, travel, I paid, receipt
+                          attached.
+                        </p>
+                      </div>
+                      <div class="chat-msg chat-msg--success">
+                        <span class="chat-msg-label">TypeTable</span>
+                        <p>
+                          Saved — $240, Travel, receipt yes, Submitted, dated
+                          today.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="chat-input-fake" aria-hidden="true"></div>
                   </div>
                 </div>
               </div>
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--record"
-                  >Enter record</span
-                >
+            </div>
+          </div>
+
+          <div class="uc-story-row uc-story-row--top uc-story-row--slushie">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">05</span> Ask a question, get an answer
+              </p>
+              <h3>"How much did we spend on travel?"</h3>
+              <p>
+                No pivot tables. You ask in plain language and get the number
+                back instantly — plus a chart of spend by category you can drop
+                straight into the finance update.
+              </p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat" aria-label="Asking for the travel total">
+                <div class="chat-bar">
+                  <strong>Ops lead</strong>
+                  <span>Asks a question</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>How much did we spend on travel this month?</p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--stat">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <div class="chat-stat">
+                      <span class="chat-stat-num">$4,820</span>
+                      <span class="chat-stat-unit">on travel</span>
+                    </div>
+                    <p class="chat-stat-caption">
+                      this month · 14 expenses
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>Break it down by category as a chart</p>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+              <div class="tt-result" style="margin-top: 0.85rem">
+                <div class="tt-result-head">
+                  <span class="tt-result-title">Spend by category</span>
+                  <span class="tt-result-meta">USD</span>
+                </div>
                 <div
-                  class="chat chat--contributor"
-                  aria-label="Contributor chat: expense and reimbursement log"
+                  class="tt-chart"
+                  role="img"
+                  aria-label="Spend by category: Travel $4,820, Software $1,960, Meals $1,240, Office $540"
                 >
-                  <div class="chat-bar">
-                    <strong>Team member</strong>
-                    <span>Submits an expense</span>
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Travel</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar tt-chart-bar--cool" style="--val: 100%"></span
+                    ></span>
+                    <span class="tt-chart-val">$4,820</span>
                   </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Submit an expense</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Happy to — what was it and how much?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>$220 for a conference ticket on June 18.</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Got it. Which category, and is there a receipt?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Category Training, receipt attached</p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Saved — Maria, $220.00, Training, receipt attached,
-                        Pending.
-                      </p>
-                    </div>
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Software</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar tt-chart-bar--number" style="--val: 41%"></span
+                    ></span>
+                    <span class="tt-chart-val">$1,960</span>
                   </div>
-                  <div class="chat-input-fake" aria-hidden="true">
-                    Record in plain language…
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Meals</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar tt-chart-bar--enum" style="--val: 26%"></span
+                    ></span>
+                    <span class="tt-chart-val">$1,240</span>
+                  </div>
+                  <div class="tt-chart-row">
+                    <span class="tt-chart-label">Office</span>
+                    <span class="tt-chart-track"
+                      ><span class="tt-chart-bar" style="--val: 11%"></span
+                    ></span>
+                    <span class="tt-chart-val">$540</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="tt-result">
-              <div class="tt-result-head">
-                <span class="tt-result-title">Expense &amp; reimbursement log</span>
-                <span class="tt-result-meta">41 records · updated 1h ago</span>
-              </div>
-              <div class="tt-scroll">
-                <table class="tt-table">
-                  <thead>
-                    <tr>
-                      <th><span class="tt-col">submitter</span><span class="tt-type">text</span></th>
-                      <th><span class="tt-col">amount</span><span class="tt-type tt-type--number">number</span></th>
-                      <th><span class="tt-col">category</span><span class="tt-type tt-type--enum">enum</span></th>
-                      <th><span class="tt-col">date</span><span class="tt-type tt-type--date">date</span></th>
-                      <th><span class="tt-col">receipt</span><span class="tt-type tt-type--bool">bool</span></th>
-                      <th><span class="tt-col">status</span><span class="tt-type tt-type--enum">enum</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>You</td>
-                      <td class="tt-mono">$54.00</td>
-                      <td>Meals</td>
-                      <td class="tt-mono">Jun 22</td>
-                      <td><span class="tt-badge tt-badge--good">✓ yes</span></td>
-                      <td><span class="tt-badge tt-badge--warn">Pending</span></td>
-                    </tr>
-                    <tr>
-                      <td>Maria</td>
-                      <td class="tt-mono">$220.00</td>
-                      <td>Training</td>
-                      <td class="tt-mono">Jun 18</td>
-                      <td><span class="tt-badge tt-badge--good">✓ yes</span></td>
-                      <td><span class="tt-badge tt-badge--warn">Pending</span></td>
-                    </tr>
-                    <tr>
-                      <td>Leo</td>
-                      <td class="tt-mono">$1,240.00</td>
-                      <td>Travel</td>
-                      <td class="tt-mono">Jun 12</td>
-                      <td><span class="tt-badge tt-badge--good">✓ yes</span></td>
-                      <td><span class="tt-badge tt-badge--good">Approved</span></td>
-                    </tr>
-                    <tr>
-                      <td>Nadia</td>
-                      <td class="tt-mono">$36.50</td>
-                      <td>Supplies</td>
-                      <td class="tt-mono">Jun 09</td>
-                      <td><span class="tt-badge tt-badge--muted">✗ no</span></td>
-                      <td><span class="tt-badge tt-badge--hot">Rejected</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="tt-result-foot">
-                Showing 4 of 41 · amount &gt; 0, category from approved list
+          </div>
+
+          <div class="uc-story-row uc-story-row--pom">
+            <div class="uc-story-copy">
+              <p class="uc-story-eyebrow">
+                <span class="uc-story-step">06</span> Keep it trustworthy
+              </p>
+              <h3>Bad entries get politely refused</h3>
+              <p>
+                The rules ride along on every submission. When a teammate
+                fat-fingers a negative amount or invents a category, TypeTable
+                won't save it — it says what's wrong and offers a fix.
+              </p>
+              <p class="uc-story-note">Friendly, not scolding — and never silent.</p>
+            </div>
+            <div class="uc-story-media">
+              <div class="chat chat--contributor" aria-label="A bad entry is refused">
+                <div class="chat-bar">
+                  <strong>Teammate</strong>
+                  <span>Submits an expense</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>Add -50 dinner, category Miscellaneous</p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--reject">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <p>
+                      Couldn't save that one. The amount can't be negative, and
+                      Miscellaneous isn't one of the allowed categories. Want to
+                      log it as a positive amount under Meals?
+                    </p>
+                  </div>
+                  <p class="chat-rule chat-rule--reject">
+                    Amount ≥ 0 · Category ∈ Travel, Meals, Software, Office, Other
+                  </p>
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>$50 team dinner, Meals</p>
+                  </div>
+                  <div class="chat-msg chat-msg--success">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <p>Saved — $50, Meals, Submitted, dated today.</p>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
               </div>
             </div>
+          </div>
         </div>
 
         <div class="uc-more">
           <p class="label">More use cases</p>
           <nav class="uc-nav" aria-label="Other use cases">
             <a href="deal-pipeline.html">Deal pipeline</a>
-            <a href="bug-triage.html">Bug &amp; issue triage</a>
-            <a href="interview-scorecards.html">Interview scorecards</a>
-            <a href="maintenance-log.html">Equipment maintenance log</a>
-            <a href="campaign-tracker.html">Campaign tracker</a>
+            <a href="customer-feedback.html">Customer feedback</a>
+            <a href="interview-scorecards.html">Interview notes</a>
+            <a href="campaign-tracker.html">Content calendar</a>
+            <a href="inventory-tracker.html">Inventory</a>
           </nav>
         </div>
 
