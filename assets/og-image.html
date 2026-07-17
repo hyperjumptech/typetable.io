@@ -55,35 +55,19 @@
       .logo {
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 18px;
         font-weight: 600;
-        font-size: 30px;
+        font-size: 34px;
         letter-spacing: -0.03em;
       }
 
       .logo-mark {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5px;
-        width: 44px;
-        height: 44px;
-      }
-
-      .logo-mark span {
-        border-radius: 7px;
-      }
-
-      .logo-mark span:nth-child(1) {
-        background: var(--matcha-600);
-      }
-      .logo-mark span:nth-child(2) {
-        background: var(--slushie-500);
-      }
-      .logo-mark span:nth-child(3) {
-        background: var(--lemon-500);
-      }
-      .logo-mark span:nth-child(4) {
-        background: var(--ube-300);
+        display: block;
+        width: 96px;
+        height: 96px;
+        border-radius: 22px;
+        flex-shrink: 0;
+        filter: drop-shadow(0 10px 22px rgba(15, 50, 90, 0.18));
       }
 
       .copy {
@@ -210,9 +194,13 @@
   <body>
     <div class="card">
       <div class="logo">
-        <span class="logo-mark">
-          <span></span><span></span><span></span><span></span>
-        </span>
+        <img
+          class="logo-mark"
+          src="../src/images/typetable-icon.webp"
+          alt=""
+          width="96"
+          height="96"
+        />
         TypeTable
       </div>
 
