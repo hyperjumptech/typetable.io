@@ -23,6 +23,7 @@
     rgba(0, 0, 0, 0.05) 0px -0.5px 1px;
   --shadow-hard: rgb(0, 0, 0) -7px 7px;
   --max: 72rem;
+  --gutter: 1.25rem;
   --radius-card: 24px;
   --radius-section: 40px;
   --radius-pill: 1584px;
@@ -38,8 +39,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* keep anchored sections clear of the sticky header */
+section[id],
+[id^="workflow-panel"] {
+  scroll-margin-top: 5.5rem;
+}
+
 body {
   margin: 0;
+  overflow-x: clip;
   font-family: var(--font-display);
   font-size: 1.125rem;
   font-weight: 400;
@@ -103,12 +111,12 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  font-size: clamp(2.25rem, 8vw, 4.5rem);
   letter-spacing: -0.03em;
 }
 
 h2 {
-  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
   letter-spacing: -0.02em;
 }
 
@@ -126,8 +134,9 @@ h3 {
 }
 
 .wrap {
-  width: min(100% - 2.5rem, var(--max));
+  width: min(100%, var(--max));
   margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 /* Header */
@@ -153,6 +162,7 @@ h3 {
 .logo {
   display: flex;
   align-items: center;
+  min-height: 2.75rem;
   gap: 0.625rem;
   font-weight: 600;
   font-size: 1.0625rem;
@@ -169,11 +179,13 @@ h3 {
 
 .nav {
   display: none;
-  gap: 1.5rem;
+  align-items: center;
+  gap: clamp(0.85rem, 1.5vw, 1.5rem);
   margin-left: auto;
   font-size: 0.9375rem;
   font-weight: 500;
   color: var(--charcoal);
+  white-space: nowrap;
 }
 
 .nav a:hover {
@@ -194,7 +206,11 @@ h3 {
 .menu-toggle {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
   margin-left: auto;
   padding: 0.5rem;
   border: 1px dashed var(--oat);
@@ -214,7 +230,10 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 0 1.25rem 1.25rem;
+  max-height: calc(100dvh - 4.25rem);
+  padding: 0.5rem 1.25rem 1.25rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   border-top: 1px dashed var(--oat);
   background: var(--cream);
 }
@@ -229,7 +248,7 @@ h3 {
   color: var(--charcoal);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .nav,
   .header-cta {
     display: flex;
@@ -304,7 +323,7 @@ h3 {
 
 /* Hero */
 .hero {
-  padding: clamp(2.5rem, 6vw, 4rem) 1.25rem clamp(3rem, 8vw, 5rem);
+  padding: clamp(2.5rem, 6vw, 4rem) var(--gutter) clamp(3rem, 8vw, 5rem);
   overflow: hidden;
 }
 
@@ -312,7 +331,7 @@ h3 {
   position: relative;
   max-width: var(--max);
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3rem);
+  padding: clamp(1.5rem, 5vw, 3rem);
   background: var(--white);
   border: 1px solid var(--oat);
   border-radius: var(--radius-section);
@@ -410,6 +429,17 @@ h1 .highlight {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.75rem;
+}
+
+@media (max-width: 479px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
 }
 
 .hero-note {
@@ -527,7 +557,7 @@ h1 .highlight {
 
 /* Sections */
 .section {
-  padding: clamp(3rem, 8vw, 5rem) 1.25rem;
+  padding-block: clamp(3rem, 8vw, 5rem);
 }
 
 .section-head {
@@ -544,7 +574,7 @@ h1 .highlight {
 .how-band {
   background: var(--slushie-500);
   border-block: 2px solid var(--black);
-  padding: clamp(3rem, 8vw, 4.5rem) 1.25rem;
+  padding-block: clamp(3rem, 8vw, 4.5rem);
 }
 
 .how-band .section-head h2,
@@ -557,7 +587,6 @@ h1 .highlight {
   gap: 1rem;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0;
   list-style: none;
 }
 
@@ -674,69 +703,6 @@ h1 .highlight {
 }
 
 /* Use cases — chat demos */
-.use-cases-stack {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2.5rem, 6vw, 3.5rem);
-  max-width: var(--max);
-  margin: 0 auto;
-}
-
-.use-case-block {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.use-case-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.75rem 1rem;
-}
-
-.use-case-tag {
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: var(--oat-light);
-  border: 1px solid var(--black);
-  border-radius: 6px;
-}
-
-.use-case-block:nth-child(1) .use-case-tag {
-  background: var(--ube-300);
-}
-
-.use-case-block:nth-child(2) .use-case-tag {
-  background: var(--lemon-400);
-}
-
-.use-case-block:nth-child(3) .use-case-tag {
-  background: color-mix(in srgb, var(--slushie-500) 55%, var(--white));
-}
-
-.use-case-block:nth-child(4) .use-case-tag {
-  background: var(--matcha-300);
-}
-
-.use-case-block:nth-child(5) .use-case-tag {
-  background: color-mix(in srgb, var(--pomegranate) 60%, var(--white));
-}
-
-.use-case-block:nth-child(6) .use-case-tag {
-  background: var(--lemon-500);
-}
-
-.use-case-head h3 {
-  margin: 0;
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-}
-
 .use-case-chats {
   display: grid;
   gap: 1rem;
@@ -998,7 +964,7 @@ h1 .highlight {
 .feature {
   display: flex;
   flex-direction: column;
-  padding: 1.75rem;
+  padding: clamp(1.25rem, 4vw, 1.75rem);
   background: var(--white);
   border: 1px solid var(--oat);
   border-radius: var(--radius-card);
@@ -1007,6 +973,7 @@ h1 .highlight {
 
 .feature h3 {
   margin: 0 0 0.5rem;
+  font-size: clamp(1.1875rem, 4.5vw, 1.375rem);
 }
 
 .feature:nth-child(1) {
@@ -1024,6 +991,204 @@ h1 .highlight {
   font-size: 1rem;
   color: var(--charcoal);
   line-height: 1.5;
+}
+
+/* Team workflows — use cases by team */
+.workflows {
+  background: color-mix(in srgb, var(--oat-light) 55%, var(--cream));
+  border-block: 1px solid var(--oat);
+}
+
+.workflow-tabs {
+  max-width: var(--max);
+  margin-inline: auto;
+}
+
+.workflow-tablist {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  /* mobile: one scrollable row that bleeds to the screen edges */
+  margin-inline: calc(-1 * var(--gutter));
+  padding: 0.25rem var(--gutter);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  /* fade the trailing edge so the row reads as scrollable */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 1.25rem,
+    #000 calc(100% - 2rem),
+    transparent 100%
+  );
+}
+
+.workflow-tablist::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .workflow-tablist {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow-x: visible;
+    mask-image: none;
+  }
+}
+
+.workflow-tab {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.05rem;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    background 0.12s ease;
+}
+
+.workflow-tab:hover {
+  background: var(--cream);
+}
+
+.workflow-tab.is-active {
+  color: var(--black);
+  background: var(--matcha-300);
+  box-shadow: var(--shadow-clay);
+}
+
+.workflow-panel[hidden] {
+  display: none;
+}
+
+.workflow-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .workflow-grid {
+    grid-template-columns: 1fr 1.05fr;
+    gap: 2.5rem;
+  }
+}
+
+.workflow-grid .chat {
+  min-height: 0;
+}
+
+.workflow-grid .chat-thread {
+  gap: 0.65rem;
+  padding: 1rem;
+}
+
+.workflow-tag {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--lemon-400);
+  border: 1px solid var(--black);
+  border-radius: 6px;
+}
+
+.workflow-copy h3 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.375rem, 2.6vw, 1.75rem);
+}
+
+.workflow-copy > p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--charcoal);
+}
+
+.workflow-list {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.workflow-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--charcoal);
+}
+
+.workflow-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  border: 1.5px solid var(--black);
+  border-radius: 50%;
+  background-color: var(--matcha-300);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='4 13 9 18 20 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.6rem;
+}
+
+.workflow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--matcha-800);
+  border-bottom: 2px solid var(--matcha-300);
+}
+
+.workflow-link::after {
+  content: "→";
+}
+
+.workflow-link:hover {
+  border-bottom-color: var(--black);
+}
+
+/* the chat mock is desktop-only — on phones the copy carries the case */
+@media (max-width: 899px) {
+  .workflow-grid .chat {
+    display: none;
+  }
+
+  /* keep the line length readable once the copy has the row to itself */
+  .workflow-copy {
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+
+  /* the active tab already names the team */
+  .workflow-tag {
+    display: none;
+  }
 }
 
 /* Compare */
@@ -1176,8 +1341,11 @@ h1 .highlight {
 
 /* FAQ */
 .faq-list {
+  /* a card, so the gutter belongs outside its border, not inside */
+  width: min(100% - 2 * var(--gutter), var(--max));
   max-width: var(--max);
   margin: 0 auto;
+  padding-inline: 0;
   background: var(--white);
   border: 1px solid var(--oat);
   border-radius: var(--radius-card);
@@ -1255,10 +1423,12 @@ h1 .highlight {
 
 /* CTA */
 .cta-band {
-  padding: clamp(3rem, 8vw, 5rem) 1.25rem;
+  padding-block: clamp(3rem, 8vw, 5rem);
 }
 
 .cta-inner {
+  /* a card, so the gutter belongs outside its border, not inside */
+  width: min(100% - 2 * var(--gutter), var(--max));
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(2rem, 5vw, 3rem);
@@ -1361,6 +1531,7 @@ h1 .highlight {
 .footer-logo {
   display: inline-flex;
   align-items: center;
+  min-height: 2.75rem;
   margin-bottom: 0.875rem;
 }
 
@@ -1437,6 +1608,8 @@ h1 .highlight {
 }
 
 .footer-meta a {
+  display: inline-block;
+  padding-block: 0.35rem;
   font-weight: 500;
   color: var(--black);
   text-decoration: underline;
@@ -2396,7 +2569,8 @@ h1 .highlight {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.25rem 0.65rem;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.85rem;
   font-family: var(--font-mono);
   font-size: 0.625rem;
   font-weight: 700;
@@ -2428,6 +2602,19 @@ h1 .highlight {
   line-height: 1.7;
   color: var(--cream);
   white-space: pre;
+}
+
+/* phones: wrap the config instead of asking for a sideways swipe */
+@media (max-width: 639px) {
+  .code-block pre {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .code-block code {
+    font-size: 0.6875rem;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
 }
 
 /* landing MCP band: copy + code side by side */
@@ -2482,6 +2669,17 @@ h1 .highlight {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+}
+
+@media (max-width: 479px) {
+  .mcp-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mcp-actions .btn {
+    width: 100%;
+  }
 }
 
 /* MCP page bits */
@@ -2592,12 +2790,43 @@ h1 .highlight {
 
 .client-tablist {
   display: flex;
-  flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.25rem;
+  /* mobile: one scrollable row instead of a wrapped stack */
+  margin-inline: calc(-1 * var(--gutter));
+  padding: 0.25rem var(--gutter);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 1.25rem,
+    #000 calc(100% - 2rem),
+    transparent 100%
+  );
+}
+
+.client-tablist::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .client-tablist {
+    flex-wrap: wrap;
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow-x: visible;
+    mask-image: none;
+  }
 }
 
 .client-tab {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  min-height: 2.75rem;
   padding: 0.55rem 1.05rem;
   font-family: var(--font-display);
   font-size: 0.9375rem;
@@ -2636,7 +2865,7 @@ h1 .highlight {
          ============================================================ */
 
 .legal-hero {
-  padding: clamp(2.5rem, 6vw, 4rem) 1.25rem clamp(1.5rem, 3vw, 2rem);
+  padding-block: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 3vw, 2rem);
 }
 
 .legal-hero .section-head {
@@ -2655,7 +2884,7 @@ h1 .highlight {
 }
 
 .legal-section {
-  padding: 0 1.25rem clamp(3rem, 8vw, 5rem);
+  padding-block: 0 clamp(3rem, 8vw, 5rem);
 }
 
 .legal-layout {
@@ -2680,7 +2909,7 @@ h1 .highlight {
 .legal-toc-list {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
+  gap: 0.125rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -2688,6 +2917,9 @@ h1 .highlight {
 }
 
 .legal-toc-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
   color: var(--charcoal);
   font-weight: 500;
   text-decoration: underline;
@@ -2832,6 +3064,9 @@ h1 .highlight {
 }
 
 .footer-legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
   color: var(--charcoal);
   font-weight: 500;
 }
