@@ -52,6 +52,14 @@
                 panel.hidden =
                   panel.getAttribute("data-client-panel") !== name;
               });
+              // keep the tapped tab fully visible in the scrollable row
+              if (tab.scrollIntoView) {
+                tab.scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                  inline: "center",
+                });
+              }
             });
           });
         });

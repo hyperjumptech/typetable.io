@@ -86,7 +86,6 @@
         </a>
         <nav class="nav" aria-label="Primary">
           <a href="#how">How it works</a>
-          <a href="#examples">Examples</a>
           <div class="nav-dropdown" data-dropdown>
             <button
               type="button"
@@ -128,6 +127,7 @@
               >
             </div>
           </div>
+          <a href="#workflows">Workflows</a>
           <a href="#teams">Teams</a>
           <a href="#features">Features</a>
           <a href="mcp.html">MCP</a>
@@ -157,7 +157,6 @@
       </div>
       <nav id="mobile-nav" class="mobile-nav" hidden data-mobile-nav>
         <a href="#how">How it works</a>
-        <a href="#examples">Examples</a>
         <span class="mobile-nav-label">Use cases</span>
         <a class="mobile-nav-sub" href="use-cases/deal-pipeline.html"
           >Deal pipeline</a
@@ -177,6 +176,7 @@
         <a class="mobile-nav-sub" href="use-cases/inventory-tracker.html"
           >Inventory</a
         >
+        <a href="#workflows">Workflows</a>
         <a href="#teams">Teams</a>
         <a href="#features">Features</a>
         <a href="mcp.html">MCP</a>
@@ -339,409 +339,443 @@
         </ol>
       </section>
 
-      <section id="examples" class="section">
+      <section id="workflows" class="section workflows">
         <div class="section-head wrap">
-          <p class="label">Real use cases</p>
-          <h2>Three teams. Six conversations. Same afternoon.</h2>
+          <p class="label">Use cases by team</p>
+          <h2>Modernize every team's workflow with AI</h2>
           <p class="lead">
-            TypeTable builds the
-            <strong>logs your team keeps re-typing</strong>. You describe what
-            to record; TypeTable builds the table, fields, and rules
-            <strong>right away</strong> — and gives your team a plain-language
-            way to add entries.
+            One product, five very different logs. Pick a case to see what the
+            team describes and what TypeTable builds back.
           </p>
         </div>
-        <div class="use-cases-stack wrap">
-          <article class="use-case-block">
-            <div class="use-case-head">
-              <span class="use-case-tag">People &amp; HR</span>
-              <h3>Performance check-ins</h3>
-            </div>
-            <div class="use-case-chats">
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--create"
-                  >1. Create table</span
-                >
-                <div
-                  class="chat chat--creator"
-                  aria-label="Creator chat: performance check-ins"
-                >
-                  <div class="chat-bar">
-                    <strong>HR lead</strong>
-                    <span>Creates the log</span>
-                  </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Our management team needs to record employee performance
-                        each quarter — employee, manager, rating, goals met, and
-                        next steps.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot chat-msg--schema">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <strong>Performance check-ins</strong>
-                      <p>Here's the table I'd create:</p>
-                      <ul class="chat-pills">
-                        <li>Employee</li>
-                        <li>Manager</li>
-                        <li>Quarter</li>
-                        <li>Rating</li>
-                        <li>Goals met</li>
-                        <li>Next steps</li>
-                        <li>Review date</li>
-                      </ul>
-                      <p class="chat-rule">
-                        Rating → Below / Meets / Exceeds · Quarter required
-                      </p>
-                      <div class="chat-actions">
-                        <span class="chat-chip chat-chip--primary"
-                          >Approve</span
-                        >
-                        <span class="chat-chip">Edit fields</span>
-                      </div>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Approve</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Created. <strong>Performance check-ins</strong> is live
-                        — invite managers whenever you're ready.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Jordan Q2 — exceeds expectations, all goals met, discuss
-                        promotion path in next steps.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Saved — Jordan, Q2, Exceeds, all goals met.</p>
-                    </div>
-                  </div>
-                  <div class="chat-input-fake" aria-hidden="true"></div>
-                </div>
-              </div>
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--record"
-                  >2. Enter record</span
-                >
-                <div
-                  class="chat chat--contributor"
-                  aria-label="Contributor chat: performance check-ins"
-                >
-                  <div class="chat-bar">
-                    <strong>Another manager</strong>
-                    <span>Records an entry</span>
-                  </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Record Sam's performance today</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Got it — Sam's check-in. What rating?
-                        <strong>Below / Meets / Exceeds</strong>
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Exceeds</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Goals met this quarter?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Yes, all five</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Notes for next steps?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Schedule 1:1 on promotion timeline</p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Saved — Sam, Exceeds, all goals met, promotion 1:1
-                        noted.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="chat-input-fake" aria-hidden="true"></div>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="use-case-block">
-            <div class="use-case-head">
-              <span class="use-case-tag">Field operations</span>
-              <h3>Site inspection visits</h3>
-            </div>
-            <div class="use-case-chats">
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--create"
-                  >1. Create table</span
-                >
-                <div
-                  class="chat chat--creator"
-                  aria-label="Creator chat: site inspections"
-                >
-                  <div class="chat-bar">
-                    <strong>Operations director</strong>
-                    <span>Creates the log</span>
-                  </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Regional supervisors visit 40 retail locations monthly.
-                        Log site, visit date, checklist score, issues found, and
-                        who owns follow-up.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot chat-msg--schema">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <strong>Site inspection visits</strong>
-                      <p>Here's the table I'd create:</p>
-                      <ul class="chat-pills">
-                        <li>Site</li>
-                        <li>Visit date</li>
-                        <li>Score</li>
-                        <li>Issues</li>
-                        <li>Follow-up owner</li>
-                        <li>Due date</li>
-                      </ul>
-                      <p class="chat-rule">
-                        Score 0–100 · Due date auto +7 days when issues listed
-                      </p>
-                      <div class="chat-actions">
-                        <span class="chat-chip chat-chip--primary"
-                          >Approve</span
-                        >
-                        <span class="chat-chip">Edit fields</span>
-                      </div>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Approve</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Created. <strong>Site inspection visits</strong> is
-                        live.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="chat-input-fake" aria-hidden="true"></div>
-                </div>
-              </div>
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--record"
-                  >2. Enter record</span
-                >
-                <div
-                  class="chat chat--contributor"
-                  aria-label="Contributor chat: site inspections"
-                >
-                  <div class="chat-bar">
-                    <strong>Regional supervisor</strong>
-                    <span>Records an entry</span>
-                  </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Log my visit to Store 14 today</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Checklist score? (0–100)</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>92</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Any issues found?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Signage fix needed at entrance</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Who owns follow-up?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Carlos by Friday</p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Saved — Store 14, 92%, signage fix, Carlos by Friday.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="chat-input-fake" aria-hidden="true"></div>
-                </div>
-              </div>
-            </div>
-          </article>
 
-          <article class="use-case-block">
-            <div class="use-case-head">
-              <span class="use-case-tag">Software engineering</span>
-              <h3>Work blockers</h3>
-            </div>
-            <div class="use-case-chats">
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--create"
-                  >1. Create table</span
+        <div class="workflow-tabs wrap" data-client-tabs>
+          <div
+            class="workflow-tablist"
+            role="tablist"
+            aria-label="Choose a use case"
+          >
+            <button
+              type="button"
+              class="workflow-tab is-active"
+              role="tab"
+              aria-selected="true"
+              id="workflow-tab-marketing"
+              aria-controls="workflow-panel-marketing"
+              data-client="marketing"
+            >
+              Marketing &amp; brand
+            </button>
+            <button
+              type="button"
+              class="workflow-tab"
+              role="tab"
+              aria-selected="false"
+              id="workflow-tab-sales"
+              aria-controls="workflow-panel-sales"
+              data-client="sales"
+            >
+              Sales &amp; CRM
+            </button>
+            <button
+              type="button"
+              class="workflow-tab"
+              role="tab"
+              aria-selected="false"
+              id="workflow-tab-hr"
+              aria-controls="workflow-panel-hr"
+              data-client="hr"
+            >
+              HR &amp; recruitment
+            </button>
+            <button
+              type="button"
+              class="workflow-tab"
+              role="tab"
+              aria-selected="false"
+              id="workflow-tab-it"
+              aria-controls="workflow-panel-it"
+              data-client="it"
+            >
+              IT &amp; support
+            </button>
+            <button
+              type="button"
+              class="workflow-tab"
+              role="tab"
+              aria-selected="false"
+              id="workflow-tab-ops"
+              aria-controls="workflow-panel-ops"
+              data-client="ops"
+            >
+              Frontline &amp; ops
+            </button>
+          </div>
+
+          <div
+            class="workflow-panel"
+            id="workflow-panel-marketing"
+            role="tabpanel"
+            tabindex="0"
+            aria-labelledby="workflow-tab-marketing"
+            data-client-panel="marketing"
+          >
+            <div class="workflow-grid">
+              <div class="workflow-copy">
+                <span class="workflow-tag">Marketing &amp; brand</span>
+                <h3>Every post, asset, and campaign in one log</h3>
+                <p>
+                  Campaign plans live in decks, launch dates live in chat, and
+                  nobody knows what shipped last month. Describe the calendar
+                  once and the whole team records against it.
+                </p>
+                <ul class="workflow-list">
+                  <li>
+                    Content calendar with owner, channel, and publish date
+                  </li>
+                  <li>
+                    Brand asset requests logged by the team that needs them
+                  </li>
+                  <li>
+                    Campaign results recorded the week they land, not at QBR
+                  </li>
+                </ul>
+                <a class="workflow-link" href="use-cases/campaign-tracker.html"
+                  >See the content calendar example</a
                 >
-                <div
-                  class="chat chat--creator"
-                  aria-label="Creator chat: work blockers"
-                >
-                  <div class="chat-bar">
-                    <strong>Engineering manager</strong>
-                    <span>Creates the log</span>
-                  </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Our teams need to log what's blocking them — team,
-                        summary, severity, who's blocked, date raised, and
-                        status.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot chat-msg--schema">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <strong>Work blockers</strong>
-                      <p>Here's the table I'd create:</p>
-                      <ul class="chat-pills">
-                        <li>Team</li>
-                        <li>Summary</li>
-                        <li>Severity</li>
-                        <li>Blocked</li>
-                        <li>Raised</li>
-                        <li>Owner</li>
-                        <li>Status</li>
-                      </ul>
-                      <p class="chat-rule">
-                        Severity → Low / Med / High · Status → Open / Resolved
-                      </p>
-                      <div class="chat-actions">
-                        <span class="chat-chip chat-chip--primary"
-                          >Approve</span
-                        >
-                        <span class="chat-chip">Edit fields</span>
-                      </div>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Approve</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Created. <strong>Work blockers</strong> is live — share
-                        with the team.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Payments — checkout API details still unclear, High,
-                        blocking checkout work, raised Monday, Platform owns it.
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Saved — Payments, API details, High, Open, Platform
-                        owner.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="chat-input-fake" aria-hidden="true"></div>
-                </div>
               </div>
-              <div class="use-case-chat-col">
-                <span class="use-case-flow-badge use-case-flow-badge--record"
-                  >2. Enter record</span
-                >
-                <div
-                  class="chat chat--contributor"
-                  aria-label="Contributor chat: work blockers"
-                >
-                  <div class="chat-bar">
-                    <strong>Developer</strong>
-                    <span>Records an entry</span>
-                  </div>
-                  <div class="chat-thread">
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>
-                        Log a blocker for Infrastructure — stuck waiting on
-                        staging deploy access
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Severity?
-                        <strong>Low / Med / High</strong>
-                      </p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Med</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Who's blocked?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>Me and Priya — can't test the migration</p>
-                    </div>
-                    <div class="chat-msg chat-msg--bot">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>Who should own resolving this?</p>
-                    </div>
-                    <div class="chat-msg chat-msg--user">
-                      <span class="chat-msg-label">You</span>
-                      <p>DevOps</p>
-                    </div>
-                    <div class="chat-msg chat-msg--success">
-                      <span class="chat-msg-label">TypeTable</span>
-                      <p>
-                        Saved — Infrastructure, staging access, Med, Priya
-                        blocked, DevOps owner.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="chat-input-fake" aria-hidden="true"></div>
+              <div
+                class="chat chat--creator"
+                aria-label="Creator chat: content calendar"
+              >
+                <div class="chat-bar">
+                  <strong>Marketing lead</strong>
+                  <span>Creates the log</span>
                 </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Track every post we publish — title, channel, owner,
+                      publish date, status, and which campaign it belongs to.
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--schema">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <strong>Content calendar</strong>
+                    <p>Here's the table I'd create:</p>
+                    <ul class="chat-pills">
+                      <li>Title</li>
+                      <li>Channel</li>
+                      <li>Owner</li>
+                      <li>Publish date</li>
+                      <li>Status</li>
+                      <li>Campaign</li>
+                    </ul>
+                    <p class="chat-rule">
+                      Channel → Blog / Social / Email · Status → Draft /
+                      Scheduled / Live
+                    </p>
+                    <div class="chat-actions">
+                      <span class="chat-chip chat-chip--primary">Approve</span>
+                      <span class="chat-chip">Edit fields</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
               </div>
             </div>
-          </article>
+          </div>
+
+          <div
+            class="workflow-panel"
+            id="workflow-panel-sales"
+            role="tabpanel"
+            tabindex="0"
+            aria-labelledby="workflow-tab-sales"
+            data-client-panel="sales"
+            hidden
+          >
+            <div class="workflow-grid">
+              <div class="workflow-copy">
+                <span class="workflow-tag">Sales &amp; CRM</span>
+                <h3>A pipeline reps actually update</h3>
+                <p>
+                  Reps skip the CRM because it takes eight clicks. Here they
+                  type one sentence after the call and the deal moves.
+                </p>
+                <ul class="workflow-list">
+                  <li>
+                    Deal stage, value, and next step logged from a sentence
+                  </li>
+                  <li>Required fields keep every deal comparable at review</li>
+                  <li>Call notes and follow-ups recorded from the road</li>
+                </ul>
+                <a class="workflow-link" href="use-cases/deal-pipeline.html"
+                  >See the deal pipeline example</a
+                >
+              </div>
+              <div
+                class="chat chat--creator"
+                aria-label="Creator chat: deal pipeline"
+              >
+                <div class="chat-bar">
+                  <strong>Sales lead</strong>
+                  <span>Creates the log</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Track company, contact, deal value, stage, next step, and
+                      expected close date.
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--schema">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <strong>Deal pipeline</strong>
+                    <p>Here's the table I'd create:</p>
+                    <ul class="chat-pills">
+                      <li>Company</li>
+                      <li>Contact</li>
+                      <li>Value</li>
+                      <li>Stage</li>
+                      <li>Next step</li>
+                      <li>Close date</li>
+                    </ul>
+                    <p class="chat-rule">
+                      Stage → Lead / Demo / Proposal / Won / Lost · Value
+                      required
+                    </p>
+                    <div class="chat-actions">
+                      <span class="chat-chip chat-chip--primary">Approve</span>
+                      <span class="chat-chip">Edit fields</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="workflow-panel"
+            id="workflow-panel-hr"
+            role="tabpanel"
+            tabindex="0"
+            aria-labelledby="workflow-tab-hr"
+            data-client-panel="hr"
+            hidden
+          >
+            <div class="workflow-grid">
+              <div class="workflow-copy">
+                <span class="workflow-tag">HR &amp; recruitment</span>
+                <h3>Hiring and people records that stay consistent</h3>
+                <p>
+                  Interview notes scattered across docs make candidates hard to
+                  compare. One table, the same fields for everyone, filled in
+                  right after the call.
+                </p>
+                <ul class="workflow-list">
+                  <li>
+                    Interview scorecards with the same rating scale per role
+                  </li>
+                  <li>
+                    Onboarding steps and equipment handover tracked per hire
+                  </li>
+                  <li>
+                    Quarterly check-ins logged by managers in plain language
+                  </li>
+                </ul>
+                <a
+                  class="workflow-link"
+                  href="use-cases/interview-scorecards.html"
+                  >See the interview notes example</a
+                >
+              </div>
+              <div
+                class="chat chat--creator"
+                aria-label="Creator chat: interview notes"
+              >
+                <div class="chat-bar">
+                  <strong>HR lead</strong>
+                  <span>Creates the log</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Track candidate, role, interviewer, round, rating, and the
+                      hire recommendation.
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--schema">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <strong>Interview notes</strong>
+                    <p>Here's the table I'd create:</p>
+                    <ul class="chat-pills">
+                      <li>Candidate</li>
+                      <li>Role</li>
+                      <li>Interviewer</li>
+                      <li>Round</li>
+                      <li>Rating</li>
+                      <li>Recommendation</li>
+                    </ul>
+                    <p class="chat-rule">
+                      Rating 1–5 · Recommendation → Hire / No hire / Another
+                      round
+                    </p>
+                    <div class="chat-actions">
+                      <span class="chat-chip chat-chip--primary">Approve</span>
+                      <span class="chat-chip">Edit fields</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="workflow-panel"
+            id="workflow-panel-it"
+            role="tabpanel"
+            tabindex="0"
+            aria-labelledby="workflow-tab-it"
+            data-client-panel="it"
+            hidden
+          >
+            <div class="workflow-grid">
+              <div class="workflow-copy">
+                <span class="workflow-tag">IT &amp; support</span>
+                <h3>Requests and issues out of chat, into a table</h3>
+                <p>
+                  Access requests and bug reports arrive as messages and get
+                  lost. Give every team one place to file them, with the
+                  details you need attached.
+                </p>
+                <ul class="workflow-list">
+                  <li>
+                    Access and equipment requests with approver and due date
+                  </li>
+                  <li>Bug and incident reports with severity and owner</li>
+                  <li>Customer issues logged by whoever heard them first</li>
+                </ul>
+                <a class="workflow-link" href="use-cases/customer-feedback.html"
+                  >See the issue log example</a
+                >
+              </div>
+              <div
+                class="chat chat--creator"
+                aria-label="Creator chat: IT requests"
+              >
+                <div class="chat-bar">
+                  <strong>IT lead</strong>
+                  <span>Creates the log</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Track requester, request type, details, priority,
+                      approver, and status.
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--schema">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <strong>IT requests</strong>
+                    <p>Here's the table I'd create:</p>
+                    <ul class="chat-pills">
+                      <li>Requester</li>
+                      <li>Type</li>
+                      <li>Details</li>
+                      <li>Priority</li>
+                      <li>Approver</li>
+                      <li>Status</li>
+                    </ul>
+                    <p class="chat-rule">
+                      Priority → Low / Med / High · Status → Open / In progress
+                      / Done
+                    </p>
+                    <div class="chat-actions">
+                      <span class="chat-chip chat-chip--primary">Approve</span>
+                      <span class="chat-chip">Edit fields</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="workflow-panel"
+            id="workflow-panel-ops"
+            role="tabpanel"
+            tabindex="0"
+            aria-labelledby="workflow-tab-ops"
+            data-client-panel="ops"
+            hidden
+          >
+            <div class="workflow-grid">
+              <div class="workflow-copy">
+                <span class="workflow-tag">Frontline &amp; ops</span>
+                <h3>Records from the floor, not from a desk</h3>
+                <p>
+                  Field teams will not open a spreadsheet on a phone. They type
+                  what happened in a sentence and the rules fill the rest.
+                </p>
+                <ul class="workflow-list">
+                  <li>Stock counts and low-stock flags from the storeroom</li>
+                  <li>Site visits and inspection scores logged on site</li>
+                  <li>Safety incidents with follow-up owner and due date</li>
+                </ul>
+                <a class="workflow-link" href="use-cases/inventory-tracker.html"
+                  >See the inventory example</a
+                >
+              </div>
+              <div
+                class="chat chat--creator"
+                aria-label="Creator chat: inventory"
+              >
+                <div class="chat-bar">
+                  <strong>Ops lead</strong>
+                  <span>Creates the log</span>
+                </div>
+                <div class="chat-thread">
+                  <div class="chat-msg chat-msg--user">
+                    <span class="chat-msg-label">You</span>
+                    <p>
+                      Track item, location, quantity on hand, reorder point, who
+                      counted it, and when.
+                    </p>
+                  </div>
+                  <div class="chat-msg chat-msg--bot chat-msg--schema">
+                    <span class="chat-msg-label">TypeTable</span>
+                    <strong>Inventory</strong>
+                    <p>Here's the table I'd create:</p>
+                    <ul class="chat-pills">
+                      <li>Item</li>
+                      <li>Location</li>
+                      <li>On hand</li>
+                      <li>Reorder point</li>
+                      <li>Counted by</li>
+                      <li>Counted on</li>
+                    </ul>
+                    <p class="chat-rule">
+                      On hand must be a number · Flags low stock below reorder
+                      point
+                    </p>
+                    <div class="chat-actions">
+                      <span class="chat-chip chat-chip--primary">Approve</span>
+                      <span class="chat-chip">Edit fields</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-input-fake" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
